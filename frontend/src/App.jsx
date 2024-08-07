@@ -11,13 +11,21 @@ import BlurFade from "@/components/magicui/blur-fade";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import PulsatingButton from "@/components/ui/pulsating-button";
 import Hero from './components/Hero';
+import Testimonials from './components/Testimonials';
 
 function App() {
 
   return (
     <>
       <Layout>
-        <Hero />
+        <div className='p-9'>
+          <Hero />
+          
+        </div>
+        <div className='p-9'>
+          <Testimonials/>   
+        </div>
+
       </Layout>
     </>
   );

@@ -28,7 +28,7 @@ function Hero() {
                 Learn More
               </span>
             </ShimmerButton>
-            <PulsatingButton className='' pulseColor='green'>Book a call</PulsatingButton>
+            <PulsatingButton className='text-black dark:text-white' pulseColor='green'>Book a call</PulsatingButton>
 
           </div>
           </BlurFade>
