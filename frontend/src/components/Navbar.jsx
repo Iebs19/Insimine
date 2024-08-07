@@ -116,7 +116,7 @@ const Logo = () => {
   
     return (
         <a href='/'>
-            <img src={logo} alt="company logo" className="h-6 w-full"/>
+            <img src={logo} alt="company logo" className="h-8 w-full"/>
         </a>
     )
 };
@@ -138,10 +138,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 font-nas transition-transform duration-300 ease-out rounded-lg
+    <nav className={`fixed top-0 left-0 right-0 z-50 font-nas transition-transform duration-300 ease-out rounded-sm
       ${scrolled ? 'bg-[#ffffff]/30 dark:bg-[#29c4f8]/30 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
     >
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between p-4 pb-2">
         <Logo/>
         <div className="flex items-center space-x-8 text-black dark:text-white">
           <FlyoutLink href="#about-us">
