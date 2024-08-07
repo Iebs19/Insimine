@@ -12,6 +12,10 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import PulsatingButton from "@/components/ui/pulsating-button";
 import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
+import ScrollBasedVelocity from './components/ScrollBasedVelocity';
+import ImgMarquee from './components/ImgMarquee';
+import Services from './components/Services';
+import Clients from './components/Clients';
 
 function App() {
 
@@ -22,9 +26,13 @@ function App() {
           <Hero />
           
         </div>
+        <Clients />
+        {/* <ScrollBasedVelocity /> */}
         <div className='p-9'>
           <Testimonials/>   
         </div>
+        {/* <Services /> */}
+        
 
       </Layout>
     </>
