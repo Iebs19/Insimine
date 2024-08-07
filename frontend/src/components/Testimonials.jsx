@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 const reviews = [
     {
@@ -61,15 +62,16 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
+        {/* <img className="rounded-full" width="32" height="32" alt="" src={img} /> */}
+        <FormatQuoteIcon style={{height: 32, width: 32, transform: 'scaleX(-1)'}}/>
+        <div className="flex flex-col justify-center">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-sm text-left">{body}</blockquote>
     </figure>
   );
 };

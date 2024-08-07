@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Layout>
-        <div className='p-9'>
+        <div className='pt-24'>
           <Hero />
 
         </div>

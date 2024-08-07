@@ -67,7 +67,7 @@ function Clients() {
             key={idx}
             src={data.img}
             alt={data.name}
-            className="w-1/4 h-1/10 invert-0 dark:invert"
+            className="w-1/4 h-1/10 m-4 invert-0 dark:invert"
           />
         ))}
       </Marquee>
