@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import Particles from '@/components/magicui/particles';
 import { LightMode, DarkMode } from '@mui/icons-material';
 import { NeonGradientCard } from '@/components/magicui/neon-gradient-card';
+import Navbar from './components/Navbar';
 
 const Layout = ({ children }) => {
   const { theme, setTheme } = useTheme();
@@ -19,8 +20,8 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      {/* <Navbar/> */}
-      <div>
+      <Navbar/>
+      <div className='mt-12'>
         {/* <NeonGradientCard className="w-1/2 h-auto items-center justify-center text-center bg-transparent"> */}
           {children}
         {/* </NeonGradientCard> */}
