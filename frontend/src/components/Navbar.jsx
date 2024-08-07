@@ -138,7 +138,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 font-nas transition-transform duration-300 ease-out 
+    <nav className={`fixed top-0 left-0 right-0 z-50 font-nas transition-transform duration-300 ease-out rounded-lg
       ${scrolled ? 'bg-[#ffffff]/30 dark:bg-[#29c4f8]/30 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
     >
       <div className="flex items-center justify-between p-4">
