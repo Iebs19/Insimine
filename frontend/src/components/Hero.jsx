@@ -14,8 +14,9 @@ function Hero() {
   return (
     <>
         <div className='flex flex-col justify-center'>
-          <GradualSpacing className='font-nas text-center font-bold pointer-events-none bg-gradient-to-b from-green to-lightBlue bg-clip-text text-9xl font-semibold leading-none text-transparent dark:from-green dark:to-lightBlue' text='InsiMine' duration={5} />
-          <GradualSpacing className='font-nas text-4xl text-left' text='Mining Insights for Data Driven Success.' />
+          {/* <GradualSpacing className='font-nas text-center font-bold pointer-events-none bg-gradient-to-b from-green to-lightBlue bg-clip-text text-9xl font-semibold leading-none text-transparent dark:from-green dark:to-lightBlue' text='InsiMine' duration={5} /> */}
+          <GradualSpacing className='font-nas pb-2 text-7xl text-left bg-gradient-to-b from-green to-lightBlue bg-clip-text text-transparent dark:from-green dark:to-lightBlue' text='Mining Insights for' />
+          <GradualSpacing className='font-nas text-7xl text-left' text='Data Driven Success' />
           {/* <GradualSpacing className='font-nas text-left' text='InsiMine is a trusted AI  ' />
           <GradualSpacing className='font-nas text-left' text='and analytics-based solutions provider empowering' />
           <GradualSpacing className='font-nas text-left' text=' pharmaceutical and healthcare industries to make informed,' />

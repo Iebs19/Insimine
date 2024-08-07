@@ -61,7 +61,7 @@ function Clients() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <h1 className="font-nas text-4xl">Clients</h1>
-      <Marquee className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:20s]">
         {logos.map((data, idx) => (
           <img
             key={idx}

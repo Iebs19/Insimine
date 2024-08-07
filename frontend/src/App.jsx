@@ -24,15 +24,19 @@ function App() {
       <Layout>
         <div className='p-9'>
           <Hero />
-          
+
         </div>
-        <Clients />
+        <div className='pt-24'>
+          <Clients />
+
+        </div>
+
         {/* <ScrollBasedVelocity /> */}
-        <div className='p-9'>
-          <Testimonials/>   
+        <div className='pt-4'>
+          <Testimonials />
         </div>
         {/* <Services /> */}
-        
+
 
       </Layout>
     </>

@@ -78,16 +78,16 @@ function Testimonials() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <h1 className="font-nas text-4xl">What our clients say </h1>
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {reviews.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-      </Marquee>
+      </Marquee> */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
     </div>
