@@ -5,6 +5,8 @@ import Particles from '@/components/magicui/particles';
 import { LightMode, DarkMode } from '@mui/icons-material';
 import { NeonGradientCard } from '@/components/magicui/neon-gradient-card';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 
 const Layout = ({ children }) => {
   const { theme, setTheme } = useTheme();
@@ -41,6 +43,7 @@ const Layout = ({ children }) => {
       >
         {theme === 'dark' ? <LightMode style={{ color: '#fff' }} /> : <DarkMode style={{ color: '#000' }} />}
       </button>
+      <Footer/>
     </div>
   );
 };
