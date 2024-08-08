@@ -15,6 +15,7 @@ import ScrollBasedVelocity from './components/ScrollBasedVelocity';
 import ImgMarquee from './components/ImgMarquee';
 import Services from './components/Services';
 import Clients from './components/Clients';
+import Insights from './components/Insights';
 
 function App() {
 
@@ -26,12 +27,16 @@ function App() {
 
         </div>
         <div className='pt-24'>
+          <Insights />
+
+        </div>
+        <div className='pt-24'>
           <Clients />
 
         </div>
 
         {/* <ScrollBasedVelocity /> */}
-        <div className='pt-4'>
+        <div className='pt-24'>
           <Testimonials />
         </div>
         {/* <Services /> */}

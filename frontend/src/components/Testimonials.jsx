@@ -79,8 +79,8 @@ const ReviewCard = ({
 function Testimonials() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <h1 className="font-nas text-4xl">What our clients say </h1>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        <h1 className="font-nas text-4xl mb-4">What our clients say </h1>
+      <Marquee reverse pauseOnHover className="[--duration:100s]">
         {reviews.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
