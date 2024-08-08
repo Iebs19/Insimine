@@ -8,7 +8,12 @@ import {
 } from "react-router-dom";
 import { ThemeProvider } from 'next-themes';
 import AboutUs from './pages/AboutUs.jsx';
+<<<<<<< Updated upstream
 import Layout from './Layout.jsx';
+=======
+import Services from './components/Services.jsx';
+import { Layout } from 'lucide-react';
+>>>>>>> Stashed changes
 
 const router = createBrowserRouter([
   {
@@ -17,11 +22,20 @@ const router = createBrowserRouter([
   },
   {
     path: '/aboutus',
+<<<<<<< Updated upstream
     element:( 
     <Layout>
       <AboutUs/>
     </Layout>
   )}
+=======
+    element: <AboutUs/>
+  },
+  {
+    path: '/services',
+    element: (<Layout><Services/></Layout>)
+  }
+>>>>>>> Stashed changes
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
