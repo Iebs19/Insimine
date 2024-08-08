@@ -7,12 +7,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ThemeProvider } from 'next-themes';
+import AboutUs from './pages/AboutUs.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
+  {
+    path: '/aboutus',
+    element: <AboutUs/>
+  }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

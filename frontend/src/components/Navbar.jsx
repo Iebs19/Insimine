@@ -144,13 +144,13 @@ const Navbar = () => {
       <div className="flex items-center justify-between p-4 pb-2">
         <Logo/>
         <div className="flex items-center space-x-8 text-black dark:text-white">
-          <FlyoutLink href="#about-us">
+          <FlyoutLink href="/aboutus" FlyoutContent={AboutContent}>
             About Us
           </FlyoutLink>
-          <FlyoutLink href="#services">
+          <FlyoutLink href="/services">
             Services
           </FlyoutLink>
-          <FlyoutLink href="#" FlyoutContent={InsightsContent}>
+          <FlyoutLink href="/" FlyoutContent={InsightsContent}>
             Insights
           </FlyoutLink>
           <PulsatingButton className="" pulseColor='green'>Book a consultation</PulsatingButton>
@@ -197,7 +197,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 const InsightsContent = () => {
   return ( 
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
-      bg-green/30 dark:bg-[#29c4f8]/30 backdrop-blur-md">
+      bg-green/30 dark:bg-[#29c4f8]/30 backdrop-blur-md pb-2">
       <div className="mb-3 space-y-3">
         <a href="#blogs" className="block text-sm hover:underline">
           Blogs
@@ -207,6 +207,21 @@ const InsightsContent = () => {
         </a>
         <a href="#white-papers" className="block text-sm hover:underline">
           White Papers
+        </a>
+        <a href="#events" className="block text-sm hover:underline">
+          Events
+        </a>
+      </div>
+    </div>
+  );
+};
+const AboutContent = () => {
+  return ( 
+    <div className="relative w-48 p-4 rounded-lg shadow-lg 
+      bg-green/30 dark:bg-[#29c4f8]/30 backdrop-blur-md pb-2">
+      <div className="mb-3 space-y-3">
+        <a href="#contact-us" className="block text-sm hover:underline">
+          Contact Us
         </a>
       </div>
     </div>
