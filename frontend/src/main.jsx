@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { ThemeProvider } from 'next-themes';
 import AboutUs from './pages/AboutUs.jsx';
+import Services from './pages/Services.jsx';
 import Layout from './Layout.jsx';
 
 const router = createBrowserRouter([
@@ -21,7 +22,14 @@ const router = createBrowserRouter([
     <Layout>
       <AboutUs/>
     </Layout>
-  )}
+  )},
+  {
+    path: '/services',
+    element:( 
+    <Layout>
+      <Services/>
+    </Layout>
+  )},
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

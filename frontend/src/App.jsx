@@ -13,7 +13,7 @@ import Hero from './components/Hero';
 import Testimonials from './components/Testimonials';
 import ScrollBasedVelocity from './components/ScrollBasedVelocity';
 import ImgMarquee from './components/ImgMarquee';
-import Services from './components/Services';
+import Services from './components/ServicesHome';
 import Clients from './components/Clients';
 import Insights from './components/Insights';
 

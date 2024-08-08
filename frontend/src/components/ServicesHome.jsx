@@ -2,7 +2,7 @@ import React from 'react'
 import ImgMarquee from './ImgMarquee'
 import { MagicCard } from "@/components/magicui/magic-card";
 
-function Services() {
+function ServicesHome() {
     return (
         <div className='flex flex-col justify-center'>
             <h1 className='font-nas text-4xl'>Services That We Offer</h1>
@@ -25,4 +25,4 @@ function Services() {
     )
 }
 
-export default Services
+export default ServicesHome
