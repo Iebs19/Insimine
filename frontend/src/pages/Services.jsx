@@ -12,15 +12,15 @@ import GenAI from "../assets/GenAI.png";
 function Services() {
   return (
     <div className='flex flex-col justify-center pt-4'>
-      <div className='font-nas font-bold justify-start text-7xl'>
+      <div className='font-nas font-bold justify-start text-7xl no-scrollbar'>
         Services
       </div>
-      <div className='flex flex-col justify-center mr-auto pt-6'>
+      <div className='flex flex-col justify-center mr-auto pt-6 no-scrollbar'>
         <div className='font-nas text-xl'>
           Unlock the full potential of your data with InsiMine's specialized data and analytics services tailored for the pharmaceutical and healthcare industries. Our innovative solutions transform raw data into actionable insights, driving growth, improving patient outcomes, and enhancing operational efficiency. Discover how our expertise in Data Engineering, Data Lakes & Big Data Management, and AI & Gen AI Applications can empower your organization to make informed, intelligent decisions.
         </div>
       </div>
-      <div className='flex flex-col pt-12 px-24'>
+      <div className='flex flex-col pt-12 px-24 no-scrollbar'>
         <div className='flex flex-row justify-between z-10 pb-6' id='service1'>
           <div className='w-1/2'>
             <div className='sticky top-14'>
