@@ -97,7 +97,7 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 flex justify-between items-center">
+          <div className="border-t border-gray-700 mt-8 pt-8 flex justify-between items-center px-8">
             <p className={`text-sm ${textColor}`}>© 2024 InsiMine. All rights reserved.</p>
             <div className="flex space-x-4">
               {footerData.legal.map((item, index) => (

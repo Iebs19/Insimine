@@ -11,12 +11,16 @@ const ShimmerButton = React.forwardRef((
     background = "rgba(0, 0, 0, 1)",
     className,
     children,
+    href, // Add href prop
     ...props
   },
   ref,
 ) => {
+  const Component = href ? 'a' : 'button'; // Choose between 'a' or 'button'
+
   return (
-    (<button
+    <Component
+      href={href} // Apply href if it's an anchor
       style={
         {
           "--spread": "90deg",
@@ -33,22 +37,27 @@ const ShimmerButton = React.forwardRef((
         className
       )}
       ref={ref}
-      {...props}>
+      {...props}
+    >
       {/* spark container */}
       <div
         className={cn(
           "-z-30 blur-[2px]",
           "absolute inset-0 overflow-visible [container-type:size]"
-        )}>
+        )}
+      >
         {/* spark */}
         <div
-          className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
+          className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none]"
+        >
           {/* spark before */}
           <div
-            className="animate-spin-around absolute inset-[-100%] w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]" />
+            className="animate-spin-around absolute inset-[-100%] w-auto rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]"
+          />
         </div>
       </div>
       {children}
+
       {/* Highlight */}
       <div
         className={cn(
@@ -60,16 +69,19 @@ const ShimmerButton = React.forwardRef((
           "group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]",
           // on click
           "group-active:shadow-[inset_0_-10px_10px_#ffffff3f]"
-        )} />
+        )}
+      />
       {/* backdrop */}
       <div
         className={cn(
           "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
-        )} />
-    </button>)
+        )}
+      />
+    </Component>
   );
 });
 
 ShimmerButton.displayName = "ShimmerButton";
 
 export default ShimmerButton;
+

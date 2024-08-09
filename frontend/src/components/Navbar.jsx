@@ -5,6 +5,7 @@ import logoWhite from '../assets/Insimine-LOGO-White.svg';
 import logoBlue from '../assets/Insimine-LOGO-Blue.svg';
 import { useTheme } from 'next-themes';
 
+
 const Logo = () => {
     const { theme } = useTheme(); // or your theme hook/context
   
@@ -46,7 +47,7 @@ const Navbar = () => {
           <FlyoutLink href="/services" FlyoutContent={ServicesContent}>
             Services
           </FlyoutLink>
-          <FlyoutLink href="/" FlyoutContent={InsightsContent}>
+          <FlyoutLink href="/insights" FlyoutContent={InsightsContent}>
             Insights
           </FlyoutLink>
           <PulsatingButton className="" pulseColor='green'>Book a consultation</PulsatingButton>
