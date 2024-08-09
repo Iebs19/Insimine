@@ -30,7 +30,7 @@ const AboutUs = () => {
       <div className='flex flex-col gap-4 gap-y-12 pt-12 px-12'>
         <div className='flex flex-row justify-between'>
           <motion.div {...floatAnimation}>
-            <img width='300' height='300' src={valueimg} />
+            <img width='200' height='200' src={valueimg} />
           </motion.div>
           <motion.div {...floatAnimation} className='p-4 bg-background'>
             <NeonGradientCard className='bg-background'>
