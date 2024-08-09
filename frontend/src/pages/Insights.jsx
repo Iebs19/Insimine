@@ -1,6 +1,6 @@
 import React from "react";
 import RevealCard from "@/components/RevealCard";
-
+import ShimmerButton from "@/components/magicui/shimmer-button";
 const blogs = [
   {
     title: "Enhancing Clinical Trial Data Management with Advanced Data Lakes",
@@ -22,7 +22,7 @@ const blogs = [
 
 
 
-const InsightsColumn = ({ title }) => {
+const InsightsColumn = ({ title, href }) => {
   return (
     <div>
       <div className="font-nas text-3xl ml-16">
@@ -34,6 +34,18 @@ const InsightsColumn = ({ title }) => {
           <RevealCard key={index} title={blog.title} image={blog.image} />
         ))}
       </div>
+      <div className="flex justify-center p-4">
+            <ShimmerButton
+                className="shadow-2xl"
+                background="darkBlue"
+                borderRadius="4px"
+                href={href}
+            >
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    View all
+                </span>
+            </ShimmerButton>
+        </div>
     </div>
   );
 };
@@ -43,9 +55,9 @@ const Insights = () => {
     <div className="flex flex-col justify-center pt-4 gap-8">
       <div className="font-nas font-bold text-7xl">Insights</div>
       <div className="flex flex-col gap-8">
-        <InsightsColumn title="Blogs" />
-        <InsightsColumn title="Case Stuides" />
-        <InsightsColumn title="White Paper" />
+        <InsightsColumn title="Blogs" href="/blogs"/>
+        <InsightsColumn title="Case Stuides" href="/case-studies"/>
+        <InsightsColumn title="White Paper" href="/white-papers"/>
       </div>
     </div>
   );

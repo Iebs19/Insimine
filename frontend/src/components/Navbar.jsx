@@ -102,16 +102,16 @@ const InsightsContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="#blogs" className="block text-sm hover:underline">
+        <a href="/blogs" className="block text-sm hover:underline">
           Blogs
         </a>
-        <a href="#case-studies" className="block text-sm hover:underline">
+        <a href="/case-studies" className="block text-sm hover:underline">
           Case Studies
         </a>
-        <a href="#white-papers" className="block text-sm hover:underline">
+        <a href="/white-papers" className="block text-sm hover:underline">
           White Papers
         </a>
-        <a href="#events" className="block text-sm hover:underline">
+        <a href="/events" className="block text-sm hover:underline">
           Events
         </a>
       </div>
@@ -123,7 +123,7 @@ const AboutContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="#contact-us" className="block text-sm hover:underline">
+        <a href="/contact-us" className="block text-sm hover:underline">
           Contact Us
         </a>
       </div>
@@ -135,13 +135,13 @@ const ServicesContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="#contact-us" className="block text-sm hover:underline">
+        <a href="/data-eng" className="block text-sm hover:underline">
         Data Engineering
         </a>
-        <a href="#contact-us" className="block text-sm hover:underline">
+        <a href="/data-lake" className="block text-sm hover:underline">
         Data Lakes & Big Data Management
         </a>
-        <a href="#contact-us" className="block text-sm hover:underline">
+        <a href="/gen-ai" className="block text-sm hover:underline">
         AI & Gen AI Applications
         </a>
       </div>

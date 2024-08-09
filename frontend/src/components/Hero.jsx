@@ -34,7 +34,7 @@ function Hero() {
           </p>
           <div className="flex flex-row justify-center gap-8">
             <ShimmerButton
-              className="shadow-2xl z-50"
+              className="shadow-2xl"
               background="darkBlue"
               borderRadius="4px"
               href="/aboutus"
