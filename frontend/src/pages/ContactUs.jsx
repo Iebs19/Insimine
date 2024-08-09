@@ -4,12 +4,14 @@ import { Label } from "@/components/ui/label"
 import { NeonGradientCard } from '../components/magicui/neon-gradient-card';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
+import Form from '@/components/Form';
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from '@/components/ui/button';
 
 function ContactUs() {
     return (
@@ -22,31 +24,12 @@ function ContactUs() {
                     Connect to our team to ask a question or learn more about how we can support your business.
                 </div>
             </div>
-            <div className='p-4 text-black dark:text-white'>
-                <NeonGradientCard>
-                    <form className="flex flex-col p-4 gap-4" onSubmit={(e) => { e.preventDefault(); /* Add your submit logic here */ }}>
-                        <div className='flex flex-row gap-4'>
-                            <Input type="text" id="fname" placeholder="First Name" required />
-                            <Input type="text" id="lname" placeholder="Last Name" required />
-                        </div>
-                        <div className='flex flex-row gap-4'>
-                            <Input type="email" id="email" placeholder="Email" required />
-                            <Input type="tel" id="phonenumber" placeholder="Phone Number (Optional)" pattern="[0-9]{10}" />
-                        </div>
-                        <div className='flex flex-row gap-4'>
-                            <Input type="text" id="company" placeholder="Company" required />
-                            <Input type="text" id="designation" placeholder="Designation (Optional)" />
-                        </div>
-                        <div className='flex flex-row w-1/2 gap-4'>
-                            <Input type="text" id="country" placeholder="Country" required />
-                        </div>
-                        <div className='flex flex-row gap-4'>
-                            <Input type="text" id="message" placeholder="Message" required />
-                        </div>
-                        <button type="submit" className='mt-4 p-2 bg-blue-500 w-40 text-white rounded'>
+            <div className='p-4 text-black dark:text-white mt-4'>
+                <NeonGradientCard className='w-1/2 mx-auto'>
+                    <Form/>
+                    <button type="submit" className='mt-4 p-2 bg-blue-500 w-40 text-white rounded'>
                             Submit
                         </button>
-                    </form>
                 </NeonGradientCard>
             </div>
             <div className='flex flex-col justify-center'>

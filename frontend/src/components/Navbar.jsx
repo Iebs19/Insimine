@@ -4,6 +4,7 @@ import PulsatingButton from "@/components/ui/pulsating-button";
 import logoWhite from '../assets/Insimine-LOGO-White.svg';
 import logoBlue from '../assets/Insimine-LOGO-Blue.svg';
 import { useTheme } from 'next-themes';
+import { Link } from "react-router-dom";
 
 
 const Logo = () => {
@@ -12,9 +13,12 @@ const Logo = () => {
     const logo = theme === 'dark' ? logoWhite : logoBlue;
   
     return (
-        <a href='/'>
+        // <a href='/'>
+        //     <img src={logo} alt="company logo" className="h-8 w-full"/>
+        // </a>
+        <Link to='/'>
             <img src={logo} alt="company logo" className="h-8 w-full"/>
-        </a>
+        </Link>
     )
 };
 
@@ -68,7 +72,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
         onMouseLeave={() => setOpen(false)}
         className="relative w-fit h-fit"
       >
-        <a href={href} className="relative font-bold hover:text-green transition-colors">
+        {/* <a href={href} className="relative font-bold hover:text-green transition-colors">
           {children}
           <span
           style={{
@@ -76,7 +80,16 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
           }}
           className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-lightBlue/60 transition-transform duration-300 ease-out"
         />
-        </a>
+        </a> */}
+        <Link to={href} className="relative font-bold hover:text-green transition-colors">
+          {children}
+          <span
+          style={{
+            transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
+          }}
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-lightBlue/60 transition-transform duration-300 ease-out"
+        />
+        </Link>
         <AnimatePresence>
           {showFlyout && (
             <motion.div
@@ -102,18 +115,18 @@ const InsightsContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="/blogs" className="block text-sm hover:underline">
+        <Link to="/blogs" className="block text-sm hover:underline">
           Blogs
-        </a>
-        <a href="/case-studies" className="block text-sm hover:underline">
+        </Link>
+        <Link to="/case-studies" className="block text-sm hover:underline">
           Case Studies
-        </a>
-        <a href="/white-papers" className="block text-sm hover:underline">
+        </Link>
+        <Link to="/white-papers" className="block text-sm hover:underline">
           White Papers
-        </a>
-        <a href="/events" className="block text-sm hover:underline">
+        </Link>
+        <Link to="/events" className="block text-sm hover:underline">
           Events
-        </a>
+        </Link>
       </div>
     </div>
   );

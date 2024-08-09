@@ -23,12 +23,12 @@ function Hero() {
           text="Data Driven Success"
         />
         <BlurFade delay={1} inView>
-          <p className="font-nas text-center space-x-1 p-8">
+          <p className="font-nas text-center space-x-1 p-8 mt-8 font-bold px-56">
             InsiMine is a trusted AI and analytics-based solutions provider
             empowering pharmaceutical and healthcare industries to make
             informed, data-driven decisions.
           </p>
-          <div className="z-100 flex flex-row justify-center gap-8">
+          <div className="z-100 flex flex-row justify-center gap-8 mt-8">
             <ShimmerButton
               className="shadow-2xl"
               background="darkBlue"

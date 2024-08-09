@@ -34,7 +34,7 @@ const InsightsColumn = ({ title, href }) => {
           <RevealCard key={index} title={blog.title} image={blog.image} href="/blogs"  height='300px'/>
         ))}
       </div>
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center p-4 ">
             <ShimmerButton
                 className="shadow-2xl"
                 background="darkBlue"

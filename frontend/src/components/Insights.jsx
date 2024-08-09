@@ -120,47 +120,4 @@ return (
     </div>
 );
 }
-
-// function Insights() {
-//     return (
-//         <div>
-//             <h1 className="font-nas text-4xl p-4">The Ingenious Collection</h1>
-//             <h1 className="font-nas text-2xl p-2">Dive into a world of knowledge with our blogs, case studies, and whitepapers.</h1>
-//             <div className='flex flex-row gap-4'>
-//                 {blogs.map((blog, index) => (
-//                     <motion.div
-//                         key={index}
-//                         className="relative max-w-sm h-72 overflow-hidden"
-//                         // whileHover={{ scale: 1.05 }}
-//                         // transition={{ type: "spring", stiffness: 300 }}
-//                     >
-//                         <NeonGradientCard className="h-full flex flex-col items-center justify-center text-center relative">
-//                             <div className="relative w-full h-48 overflow-hidden">
-//                                 <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
-//                                 <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 text-white p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
-//                                     <h1 className="text-xl font-bold text-center">{blog.title}</h1>
-//                                 </div>
-//                             </div>
-//                             <motion.div
-//                                 className="absolute bottom-0 left-0 w-full bg-green-500 flex items-center justify-center transition-transform duration-300 transform translate-y-full hover:translate-y-0"
-//                                 whileHover={{ opacity: 1 }}
-//                                 transition={{ type: "spring", stiffness: 300 }}
-//                             >
-//                                 <a href={blog.link} className="text-white font-medium py-2 px-4">Learn More</a>
-//                             </motion.div>
-//                         </NeonGradientCard>
-//                     </motion.div>
-//                 ))}
-//             </div>
-//             <div className='flex justify-center p-4'>
-//                 <ShimmerButton className="shadow-2xl" background='darkBlue' borderRadius='4px'>
-//                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-//                         View all
-//                     </span>
-//                 </ShimmerButton>
-//             </div>
-//         </div>
-//     );
-// }
-
 export default Insights;
