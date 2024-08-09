@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
       </div>
       <Particles
         className="absolute inset-0"
-        quantity={300}
+        quantity={200}
         ease={80}
         color={color}
         size={1.2}
@@ -43,7 +43,10 @@ const Layout = ({ children }) => {
       >
         {theme === 'dark' ? <LightMode style={{ color: '#fff' }} /> : <DarkMode style={{ color: '#000' }} />}
       </button>
+      <div className='pt-3'>
+
       <Footer/>
+      </div>
     </div>
   );
 };

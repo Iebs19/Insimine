@@ -105,7 +105,7 @@ const BlogSection = () => {
 function Insights() {
 return (
     <div>
-        <h1 className="font-nas text-4xl p-4">The Ingenious Collection</h1>
+        <h1 className="font-nas text-4xl p-4">Latest Insights</h1>
         <h1 className="font-nas text-2xl p-2">
             Dive into a world of knowledge with our blogs, case studies, and whitepapers.
         </h1>

@@ -33,8 +33,8 @@ const AboutUs = () => {
           <motion.div {...floatAnimation}>
             <img width='300' height='300' src={valueimg} />
           </motion.div>
-          <motion.div {...floatAnimation} className='p-4'>
-            <NeonGradientCard>
+          <motion.div {...floatAnimation} className='p-4 bg-background'>
+            <NeonGradientCard className='bg-background'>
               <h1 className='font-nas text-4xl'>Our Values</h1>
               <div className='text-left pt-2'>
                 <li>Innovation: Continuously pushing the boundaries of what’s possible with data and technology.</li>
