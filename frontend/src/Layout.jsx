@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar/>
-      <div className='mt-12'>
+      <div className='mt-12 p-2'>
         {/* <NeonGradientCard className="w-1/2 h-auto items-center justify-center text-center bg-transparent"> */}
           {children}
         {/* </NeonGradientCard> */}
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
       ><div></div></Particles>
       <button
         onClick={toggleTheme}
-        className="fixed  z-50 bottom-4 right-4 p-3 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white-400"
+        className="fixed  z-50 bottom-12 right-4 p-3 rounded-full shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-white-400"
         style={{ backgroundColor: theme === 'dark' ? '#333' : '#fff' }} // Adjust button background color
       >
         {theme === 'dark' ? <LightMode style={{ color: '#fff' }} /> : <DarkMode style={{ color: '#000' }} />}

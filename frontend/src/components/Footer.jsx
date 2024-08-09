@@ -68,9 +68,9 @@ const Footer = () => {
   };
 
   return (
-    <motion.div {...floatAnimation}>
-        <NeonGradientCard className='mt-8'>
-          <div className="flex flex-wrap justify-between items-center">
+    // <motion.div {...floatAnimation}>
+        <div className='w-full pb-6 border-y-2'>
+          <div className="flex flex-wrap justify-between items-center mt-4">
             <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
               <Logo />
             </div>
@@ -113,8 +113,8 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </NeonGradientCard>
-    </motion.div>
+        </div>
+    // </motion.div>
   );
 };
 

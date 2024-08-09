@@ -22,10 +22,10 @@ function Services() {
         </div>
       </div>
       <div className='flex flex-col pt-12 px-24'>
-        <div className='flex flex-row justify-between gap-4 z-10 pb-6' id='service1'>
+        <div className='flex flex-row justify-between gap-4 z-10' id='service1'>
           <div className='w-1/2'>
-            <div className='sticky top-14'>
-              <div className='font-nas text-4xl text-left no-scrollbar'>
+            <div className='sticky top-24'>
+              <div className='font-nas text-4xl text-left'>
                 1. Data Engineering
               </div>
               {/* <img src={DataEng} alt="Data Engineering" className='mt-4 w-full' /> */}
@@ -71,8 +71,8 @@ function Services() {
 
         <div className='flex flex-row justify-between gap-4 z-10' id='service2'>
           <div className='w-1/2'>
-            <div className='sticky top-14'>
-              <div className='font-nas text-4xl text-left no-scrollbar'>
+            <div className='sticky top-24'>
+              <div className='font-nas text-4xl text-left'>
                 2. Data Lakes & Big Data Management
               </div>
               {/* <img src={DataLake} alt="Data Lakes" className='mt-4 w-full' /> */}
@@ -114,8 +114,8 @@ function Services() {
 
         <div className='flex flex-row justify-between gap-4 z-10' id='service3'>
           <div className='w-1/2'>
-            <div className='sticky top-14'>
-              <div className='font-nas text-4xl text-left no scrollbar'>
+            <div className='sticky top-24'>
+              <div className='font-nas text-4xl text-left'>
                 3. AI & Gen AI Applications
               </div>
               {/* <img src={GenAI} alt="Gen AI" className='mt-4 w-full' /> */}
