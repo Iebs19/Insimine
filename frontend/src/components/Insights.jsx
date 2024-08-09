@@ -26,11 +26,10 @@ const blogs = [
   const RevealCard = ({ title, image }) => {
     return (
       <div className="relative h-[300px] w-full group">
-        {/* Text Section */}
         <div className="flex h-1/2 flex-col justify-center bg-black p-6 z-10">
           <h3 className="mb-2 text-xl font-semibold text-white">{title}</h3>
         </div>
-        {/* Image Section */}
+
         <div
           className="absolute inset-0 z-0 transition-transform duration-500 group-hover:top-1/2 group-hover:right-1/2 bg-slate-200"
           style={{
@@ -39,6 +38,20 @@ const blogs = [
             backgroundPosition: 'center center',
           }}
         ></div>
+        {/* <motion.div
+      className="absolute inset-0 z-0 bg-slate-200"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}
+      initial={{ top: '0%', right: '0%' }}
+      whileHover={{ top: '50%', right: '50%' }}
+      transition={{
+        duration: 0.15, // 150ms
+        ease: [0.4, 0, 0.2, 1], // cubic-bezier
+      }}
+    /> */}
         {/* More Button */}
         <a
           href="#"
@@ -69,10 +82,6 @@ const blogs = [
   };
   
   
-  
-//   export default RevealCard;
-  
-
 const BlogSection = () => {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">

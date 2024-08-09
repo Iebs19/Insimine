@@ -69,7 +69,7 @@ const Footer = () => {
 
   return (
     <motion.div {...floatAnimation}>
-        <NeonGradientCard>
+        <NeonGradientCard className='mt-8'>
           <div className="flex flex-wrap justify-between items-center">
             <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
               <Logo />

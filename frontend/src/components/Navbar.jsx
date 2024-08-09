@@ -43,7 +43,7 @@ const Navbar = () => {
           <FlyoutLink href="/aboutus" FlyoutContent={AboutContent}>
             About Us
           </FlyoutLink>
-          <FlyoutLink href="/services">
+          <FlyoutLink href="/services" FlyoutContent={ServicesContent}>
             Services
           </FlyoutLink>
           <FlyoutLink href="/" FlyoutContent={InsightsContent}>
@@ -69,6 +69,12 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
       >
         <a href={href} className="relative font-bold hover:text-green transition-colors">
           {children}
+          <span
+          style={{
+            transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
+          }}
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-lightBlue/60 transition-transform duration-300 ease-out"
+        />
         </a>
         <AnimatePresence>
           {showFlyout && (
@@ -93,7 +99,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 const InsightsContent = () => {
   return ( 
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
-      bg-green/30 dark:bg-[#29c4f8]/30 backdrop-blur-md pb-2">
+      bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
         <a href="#blogs" className="block text-sm hover:underline">
           Blogs
@@ -114,10 +120,28 @@ const InsightsContent = () => {
 const AboutContent = () => {
   return ( 
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
-      bg-green/30 dark:bg-[#29c4f8]/30 backdrop-blur-md pb-2">
+      bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
         <a href="#contact-us" className="block text-sm hover:underline">
           Contact Us
+        </a>
+      </div>
+    </div>
+  );
+};
+const ServicesContent = () => {
+  return ( 
+    <div className="relative w-48 p-4 rounded-lg shadow-lg 
+      bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
+      <div className="mb-3 space-y-3">
+        <a href="#contact-us" className="block text-sm hover:underline">
+        Data Engineering
+        </a>
+        <a href="#contact-us" className="block text-sm hover:underline">
+        Data Lakes & Big Data Management
+        </a>
+        <a href="#contact-us" className="block text-sm hover:underline">
+        AI & Gen AI Applications
         </a>
       </div>
     </div>

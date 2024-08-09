@@ -69,10 +69,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
+  
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
