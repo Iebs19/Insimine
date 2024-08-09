@@ -25,16 +25,36 @@ const blogs = [
   ];
 
 
+// const BlogSection = () => {
+//     return (
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+//         {blogs.map((blog, index) => (
+//           <RevealCard
+//             key={index}
+//             title={blog.title}
+//             image={blog.image}
+//           />
+//         ))}
+//       </div>
+//     );
+//   };
+
 const BlogSection = () => {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-        {blogs.map((blog, index) => (
-          <RevealCard
+      <div className="flex flex-row gap-16 px-16 mb-4">
+        
+        <RevealCard title={blogs[0].title} image={blogs[0].image} height='400px'/>
+
+        <div className="flex flex-col gap-8">
+        {blogs.slice(1).map((blog, index) => (
+            <RevealCard
             key={index}
-            title={blog.title}
-            image={blog.image}
-          />
+              title={blog.title}
+              image={blog.image}
+              height='200px'
+            />
         ))}
+        </div>
       </div>
     );
   };
@@ -49,7 +69,7 @@ function Insights() {
 return (
     <div>
         <h1 className="font-nas text-4xl p-4">Latest Insights</h1>
-        <h1 className="font-nas text-2xl p-2">
+        <h1 className="font-nas text-2xl p-2 mb-8">
             Dive into a world of knowledge with our blogs, case studies, and whitepapers.
         </h1>
 <BlogSection/>

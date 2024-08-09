@@ -31,7 +31,7 @@ const InsightsColumn = ({ title, href }) => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 ">
         {blogs.map((blog, index) => (
-          <RevealCard key={index} title={blog.title} image={blog.image} href="/blogs"/>
+          <RevealCard key={index} title={blog.title} image={blog.image} href="/blogs"  height='300px'/>
         ))}
       </div>
       <div className="flex justify-center p-4">

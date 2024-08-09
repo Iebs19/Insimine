@@ -12,9 +12,9 @@ import {
 } from "../components/ui/dialog";
 import Form from "./Form";
 
-const RevealCard = ({ title, image, href = "/" }) => {
+const RevealCard = ({ title, image, href = "/", height }) => {
   return (
-    <div className="relative h-[300px] w-full group">
+    <div className={`relative h-[${height}] w-full group`}>
       <div className="flex h-1/2 flex-col justify-center bg-black p-6 z-10">
         <h3 className="mb-2 text-xl font-semibold text-white">{title}</h3>
       </div>
@@ -95,12 +95,12 @@ const RevealCard = ({ title, image, href = "/" }) => {
           </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-xl">
-          {/* <DialogHeader>
+          <DialogHeader>
             <DialogTitle>Form</DialogTitle>
             <DialogDescription>fill the form</DialogDescription>
-          </DialogHeader> */}
+          </DialogHeader>
           <Form />
-          <DialogFooter className="sm:justify-start">
+          <DialogFooter className="sm:justify-center px-4">
             <DialogClose asChild>
               <Button type="button" variant="secondary">
                 Submit

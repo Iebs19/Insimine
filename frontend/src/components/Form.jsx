@@ -43,6 +43,7 @@ const Form = () => {
           </label>
           <input
             id="firstname"
+            placeholder="John"
             type="text"
             {...register("firstname")}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
@@ -57,6 +58,7 @@ const Form = () => {
           <input
             id="lastname"
             type="text"
+            placeholder="Doe"
             {...register("lastname")}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
           />
@@ -71,6 +73,7 @@ const Form = () => {
           <input
             id="email"
             type="email"
+            placeholder="example@email.com"
             {...register("email")}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
           />
@@ -85,6 +88,7 @@ const Form = () => {
             id="phone"
             type="tel"
             {...register("phone")}
+            placeholder="(123) 456-7890"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
           />
           {errors.phone && <p className="text-red-600 text-sm">{errors.phone.message}</p>}
@@ -99,6 +103,7 @@ const Form = () => {
             id="company"
             type="text"
             {...register("company")}
+            placeholder="Acme Inc."
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
           />
           {errors.company && <p className="text-red-600 text-sm">{errors.company.message}</p>}
@@ -111,6 +116,7 @@ const Form = () => {
           <input
             id="designation"
             type="text"
+            placeholder="Software Engineer"
             {...register("designation")}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
           />
@@ -125,7 +131,8 @@ const Form = () => {
           <select
             id="country"
             {...register("country")}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm"
+            
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 sm:text-sm ]"
           >
             <option value="">Select a country</option>
             {countries.map((country) => (

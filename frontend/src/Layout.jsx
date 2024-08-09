@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         {/* </NeonGradientCard> */}
       </div>
       <Particles
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         quantity={200}
         ease={80}
         color={color}
