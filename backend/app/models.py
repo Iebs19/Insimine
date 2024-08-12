@@ -109,7 +109,8 @@ class Client(models.Model):
         return self.name
 
 class Testimonial(models.Model):
-    author = models.CharField(max_length=20)
+    author = models.CharField(max_length=50)
+    company = models.CharField(max_length=50,default='Default Company')
     content = models.TextField()
 
     def __str__(self):

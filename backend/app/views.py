@@ -18,6 +18,10 @@ class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
 
+class TestimonialViewSet(viewsets.ModelViewSet):
+    queryset = Testimonial.objects.all()
+    serializer_class = TestimonialSerializer
+
 class ContentBlockListCreateView(generics.ListCreateAPIView):
     queryset = ContentBlock.objects.all()
     serializer_class = ContentBlockSerializer
@@ -42,14 +46,6 @@ class WhitePaperListCreateView(generics.ListCreateAPIView):
 class WhitePaperDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = WhitePaper.objects.all()
     serializer_class = WhitePaperSerializer
-
-class TestimonialListCreateView(generics.ListCreateAPIView):
-    queryset = Testimonial.objects.all()
-    serializer_class = TestimonialSerializer
-
-class TestimonialDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Testimonial.objects.all()
-    serializer_class = TestimonialSerializer
 
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()

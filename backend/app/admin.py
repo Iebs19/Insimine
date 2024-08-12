@@ -66,5 +66,5 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(Testimonial)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('author', 'content')
-    search_fields = ('author',)
+    list_display = ('author','company', 'content')
+    search_fields = ('author','company')
