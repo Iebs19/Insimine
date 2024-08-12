@@ -54,7 +54,7 @@ const Navbar = () => {
           <FlyoutLink href="/insights" FlyoutContent={InsightsContent}>
             Insights
           </FlyoutLink>
-          <PulsatingButton className="" pulseColor='green'>Book a consultation</PulsatingButton>
+          <PulsatingButton className="" pulseColor='green'><a href="/bookings">Book a consultation</a></PulsatingButton>
         </div>
       </div>
     </nav>

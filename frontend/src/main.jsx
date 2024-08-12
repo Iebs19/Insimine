@@ -11,6 +11,8 @@ import Insights from "./pages/Insights.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import IndividualInsightSection from "./pages/IndividualInsightSection.jsx";
 import blogs from './data/blogs.json';
+import BookingIframe from "./pages/BookingIframe.jsx";
+import Layout2 from "./Layout2.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       <Layout>
         <Services />
       </Layout>
+    ),
+  },
+  {
+    path: "/bookings",
+    element: (
+      <Layout2>
+        <BookingIframe/>
+      </Layout2>
     ),
   },
   {
