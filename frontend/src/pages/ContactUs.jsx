@@ -53,14 +53,14 @@ function ContactUs() {
                         <AccordionItem value="item-2" >
                             <AccordionTrigger className='font-nas text-3xl'>USA</AccordionTrigger>
                             <AccordionContent className='text-left'>
-                                <h1 className='font-nas text-2xl'>California</h1>
+                                <h1 className='font-nas text-2xl'>Delaware</h1>
                                 <div className='m-7'>
                                     <LocationOnIcon />
-                                    <a>99 S Almaden Blvd, Suite 600, San Jose, CA</a>
+                                    <a>8 The Green, Suite B, Dover, DE 19901</a>
                                 </div>
                                 <div className='m-7'>
                                     <PhoneIcon />
-                                    <a>+13474802054</a>
+                                    <a>+1 302 450 1418</a>
                                 </div>
                             </AccordionContent>
                             <AccordionContent className='text-left'>
