@@ -1,5 +1,6 @@
 import React from "react";
 import RevealCard from "@/components/RevealCard";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 
 const IndividualInsightSection = ({ title, data }) => {
   return (
@@ -17,6 +18,16 @@ const IndividualInsightSection = ({ title, data }) => {
           />
         ))}
       </div>
+      <ShimmerButton
+        className="shadow-2xl mx-auto"
+        background="darkBlue"
+        borderRadius="4px"
+        // href={href}
+      >
+        <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+          Load more
+        </span>
+      </ShimmerButton>
     </div>
   );
 };
