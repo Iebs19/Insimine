@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
@@ -101,9 +102,13 @@ class WhitePaper(models.Model):
     def __str__(self):
         return self.title
 
+def validate_svg_or_image(file):
+    if not (file.name.endswith('.svg') or file.name.endswith('.jpg') or file.name.endswith('.png')):
+        raise ValidationError('File is not an image or SVG.')
+
 class Client(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='client_images/', null=True, blank=True)
+    image = models.FileField(upload_to='client_images/', validators=[validate_svg_or_image], null=True, blank=True)
 
     def __str__(self):
         return self.name

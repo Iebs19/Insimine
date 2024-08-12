@@ -59,15 +59,6 @@ function Services() {
                       In this service segment, InsiMine supports healthcare enterprises in efficient data ingestion and onboarding processes for diverse healthcare data sources. We establish data catalogs and lineage systems to track data flow and usage, ensuring data quality and standardization to meet regulatory requirements. Our data integration and orchestration services also enable seamless data flow across systems, enhancing operational efficiency and data usability.
                     </AccordionContent>
                   </AccordionItem>
-                  {/* <AccordionItem value="item-3">
-                    <AccordionTrigger className='font-nas'>•	Benefits</AccordionTrigger>
-                    <AccordionContent className='text-left'>
-                      <li>Enhanced data reliability and accessibility for better decision-making.</li>
-                      <li>Improved data governance and compliance with healthcare regulations.</li>
-                      <li>Scalable and flexible data management solutions tailored to industry needs.</li>
-                      <li>Optimized business decision-making through trustworthy analytics-ready data.</li>
-                    </AccordionContent>
-                  </AccordionItem> */}
                 </Accordion>
               </div>
               
