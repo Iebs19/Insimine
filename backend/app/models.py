@@ -13,34 +13,9 @@ def content_block_image_upload_to(instance, filename):
         return os.path.join('service_images/', filename)
     return os.path.join('other_images/', filename)
 
-class Blog(models.Model):
-    title = models.CharField(max_length=200, default='Default Title')
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-class CaseStudy(models.Model):
-    title = models.CharField(max_length=200, default='Default Title')
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-class Service(models.Model):
-    title = models.CharField(max_length=200, default='Default Title')
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
 class ContentBlock(models.Model):
     TEXT = 'text'
     IMAGE = 'image'
-
     BLOCK_TYPE_CHOICES = [
         (TEXT, 'Text'),
         (IMAGE, 'Image'),
@@ -53,24 +28,47 @@ class ContentBlock(models.Model):
         ('normal', 'Normal Text'),
     ]
 
-    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,default='blog')
-    content_id = models.PositiveIntegerField(default=0)
-    content_object = GenericForeignKey('content_type', 'content_id')
+    blog = models.ForeignKey('Blog', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+    case_study = models.ForeignKey('CaseStudy', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+    service = models.ForeignKey('Service', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
 
     block_type = models.CharField(max_length=10, choices=BLOCK_TYPE_CHOICES)
-    text = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to='content_block_images/', null=True, blank=True)
-    order = models.PositiveIntegerField()
-    text_type = models.CharField(max_length=20, choices=TEXT_TYPE_CHOICES, null=True, blank=True)
+    text = models.TextField(blank=True)
+    image = models.ImageField(upload_to='content_blocks/', blank=True)
+    text_type = models.CharField(max_length=20, choices=TEXT_TYPE_CHOICES, blank=True)
 
     class Meta:
-        ordering = ['order']
+        ordering = ['id']  # or another default ordering
 
     def __str__(self):
-        return f'{self.content_type} - {self.get_block_type_display()} - {self.order}'
+        return f"ContentBlock for {self.blog or self.case_study or self.service}"
 
+class Blog(models.Model):
+    title = models.CharField(max_length=200, default='Default Title')
+    mainImage = models.ImageField(upload_to='blog_images/', null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
 
+class CaseStudy(models.Model):
+    title = models.CharField(max_length=200, default='Default Title')
+    mainImage = models.ImageField(upload_to='case_study_images/', null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+class Service(models.Model):
+    title = models.CharField(max_length=200, default='Default Title')
+    mainImage = models.ImageField(upload_to='service_images/', null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
 
 class FormData(models.Model):
     firstName = models.CharField(max_length=100,default='Default First Name')

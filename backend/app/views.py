@@ -34,7 +34,6 @@ class FormDataCreateView(generics.CreateAPIView):
     queryset = FormData.objects.all()
     serializer_class = FormDataSerializer
 
-
 class TechStackViewSet(viewsets.ModelViewSet):
     queryset = TechStack.objects.all()
     serializer_class = TechStackSerializer

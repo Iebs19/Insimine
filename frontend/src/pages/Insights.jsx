@@ -29,9 +29,9 @@ const InsightsColumn = ({ title, href }) => {
         {title}
         <span className="block mt-2 h-[2px]  origin-left rounded-full bg-lightBlue/60" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 h-[300px]">
         {blogs.map((blog, index) => (
-          <RevealCard key={index} title={blog.title} image={blog.image} href="/blogs"  height='300px'/>
+          <RevealCard key={index} title={blog.title} image={blog.image} href="/blogs" />
         ))}
       </div>
       <div className="flex justify-center p-4 ">

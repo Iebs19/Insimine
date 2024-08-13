@@ -2,52 +2,41 @@ from rest_framework import serializers
 from .models import Blog, Service, TechStack, Client, ContentBlock, FormData, CaseStudy, WhitePaper, Testimonial
 
 class ContentBlockSerializer(serializers.ModelSerializer):
+    text_type = serializers.SerializerMethodField()
+    image = serializers.SerializerMethodField()
+
     class Meta:
         model = ContentBlock
-        fields = ['id', 'block_type', 'text', 'image', 'order', 'text_type']
+        fields = ['block_type', 'text', 'text_type', 'image']
+
+    def get_text_type(self, obj):
+        return obj.text_type if obj.block_type == ContentBlock.TEXT else None
+
+    def get_image(self, obj):
+        return obj.image.url if obj.block_type == ContentBlock.IMAGE else None
+
 
 class BlogSerializer(serializers.ModelSerializer):
     content_blocks = ContentBlockSerializer(many=True, read_only=True)
 
     class Meta:
         model = Blog
-        fields = ['id', 'title', 'created_at', 'updated_at', 'content_blocks']
-
-    def get_content_blocks(self, obj):
-        content_blocks = ContentBlock.objects.filter(
-            content_type__model='blog',
-            content_id=obj.id
-        ).order_by('order')
-        return ContentBlockSerializer(content_blocks, many=True).data
+        fields = ['id', 'title', 'mainImage' ,'created_at', 'updated_at', 'content_blocks']
 
 class CaseStudySerializer(serializers.ModelSerializer):
     content_blocks = ContentBlockSerializer(many=True, read_only=True)
 
     class Meta:
         model = CaseStudy
-        fields = ['id', 'title', 'created_at', 'updated_at', 'content_blocks']
-
-    def get_content_blocks(self, obj):
-        content_blocks = ContentBlock.objects.filter(
-            content_type__model='case-study',
-            content_id=obj.id
-        ).order_by('order')
-        return ContentBlockSerializer(content_blocks, many=True).data
-
+        fields = ['id', 'title', 'mainImage' ,'created_at', 'updated_at', 'content_blocks']
 
 class ServiceSerializer(serializers.ModelSerializer):
-    content_blocks = serializers.SerializerMethodField()
+    content_blocks = ContentBlockSerializer(many=True, read_only=True)
 
     class Meta:
         model = Service
-        fields = ['id', 'title', 'created_at', 'updated_at', 'content_blocks']
+        fields = ['id', 'title', 'mainImage','created_at', 'updated_at', 'content_blocks']
 
-    def get_content_blocks(self, obj):
-        content_blocks = ContentBlock.objects.filter(
-            content_type__model='service',
-            content_id=obj.id
-        ).order_by('order')
-        return ContentBlockSerializer(content_blocks, many=True).data
 
 class FormDataSerializer(serializers.ModelSerializer):
     class Meta:
@@ -58,7 +47,6 @@ class TechStackSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechStack
         fields = '__all__'
-
 
 class WhitePaperSerializer(serializers.ModelSerializer):
     class Meta:

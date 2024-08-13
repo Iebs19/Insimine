@@ -1,37 +1,24 @@
 from django.contrib import admin
-from django import forms
 from .models import Blog, Service, TechStack, Client, ContentBlock, CaseStudy, WhitePaper, Testimonial
 from django.contrib.contenttypes.admin import GenericTabularInline
+from django.forms import BaseInlineFormSet, forms
 
-
-class ContentBlockInline(GenericTabularInline):
+class ContentBlockInline(admin.StackedInline):
     model = ContentBlock
     extra = 1
-    fields = ['block_type', 'text', 'image', 'order', 'text_type']
-    ct_field = 'content_type'
-    ct_fk_field = 'content_id'
+    fields = ['block_type', 'text', 'image', 'text_type']
 
-    def get_formset(self, request, obj=None, **kwargs):
-        formset = super().get_formset(request, obj, **kwargs)
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
         if obj:
-            for form in formset.forms:
-                if form.instance.block_type == ContentBlock.TEXT:
-                    form.fields['text_type'].widget = forms.Select(choices=ContentBlock.TEXT_TYPE_CHOICES)
-                else:
-                    form.fields['text_type'].widget = forms.HiddenInput()
-        return formset
-
-class ContentBlockForm(forms.ModelForm):
-    class Meta:
-        model = ContentBlock
-        fields = '__all__'
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if self.instance and self.instance.block_type == ContentBlock.TEXT:
-            self.fields['text_type'].widget = forms.Select(choices=ContentBlock.TEXT_TYPE_CHOICES)
-        else:
-            self.fields['text_type'].widget = forms.HiddenInput()
+            if obj.block_type == ContentBlock.TEXT:
+                form.base_fields['text_type'].widget = forms.Select(choices=ContentBlock.TEXT_TYPE_CHOICES)
+                form.base_fields['image'].widget = forms.HiddenInput()
+            elif obj.block_type == ContentBlock.IMAGE:
+                form.base_fields['image'].widget = forms.ClearableFileInput()
+                form.base_fields['text'].widget = forms.HiddenInput()
+                form.base_fields['text_type'].widget = forms.HiddenInput()
+        return form
 
 class BaseContentAdmin(admin.ModelAdmin):
     inlines = [ContentBlockInline]
