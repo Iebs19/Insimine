@@ -6,8 +6,13 @@ function Clients() {
 
   useEffect(() => {
     // Fetching the images from the backend
-    fetch('https://localhost:5000/api/clients')
-      .then(response => response.json())
+    fetch('http://127.0.0.1:8000/api/client') // Make sure the API endpoint is correct
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => setLogos(data))
       .catch(error => console.error('Error fetching client logos:', error));
   }, []);
@@ -16,12 +21,12 @@ function Clients() {
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <h1 className="font-nas text-4xl">Clients</h1>
       <Marquee pauseOnHover className="[--duration:60s]">
-        {logos.map((data, idx) => (
+        {logos.map((logo) => (
           <img
-            key={idx}
-            src={data.image}
-            alt={data.name}
-            className="w-1/4 h-1/10 m-4"
+            key={logo.id}
+            src={logo.image}
+            alt={logo.name}
+            className="w-[100px] h-[100px] m-4"
           />
         ))}
       </Marquee>
