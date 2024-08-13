@@ -13,6 +13,7 @@ import IndividualInsightSection from "./pages/IndividualInsightSection.jsx";
 import blogs from './data/blogs.json';
 import BookingIframe from "./pages/BookingIframe.jsx";
 import Layout2 from "./Layout2.jsx";
+import BlogPage from "./pages/BlogPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -78,10 +79,10 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "blogs",
+    path: "/blog1",
     element: (
       <Layout>
-        <IndividualInsightSection title="Blogs" data={blogs}/>
+        <BlogPage />
       </Layout>
     ),
   },
