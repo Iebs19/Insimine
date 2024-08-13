@@ -1,7 +1,11 @@
-asgiref==3.8.1
+asgiref
 Django
-django-webpack-loader==3.1.0
-djangorestframework==3.15.2
-pillow==10.4.0
-sqlparse==0.5.1
-tzdata==2024.1
+django-cors-headers
+django-webpack-loader
+djangorestframework
+pillow
+psycopg2
+python-dotenv
+sqlparse
+typing_extensions
+tzdata
