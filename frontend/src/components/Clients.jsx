@@ -26,7 +26,7 @@ function Clients() {
             key={logo.id}
             src={logo.image}
             alt={logo.name}
-            className="w-[100px] h-[100px] m-4"
+            className="w-[100px] h-[100px] m-4 invert-0 dark:invert"
           />
         ))}
       </Marquee>
