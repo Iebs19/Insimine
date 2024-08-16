@@ -111,6 +111,38 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
+  {
+    path: "/blog/:id",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="Blog Details" fetchUrl={`${baseUrl}/blog`} type="blog"/>
+      </Layout>
+    ),
+  },
+  {
+    path: "/case-studies/:id",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="Case Study Details" fetchUrl={`${baseUrl}/case-study`} type="case-study"/>
+      </Layout>
+    ),
+  },
+  {
+    path: "/white-papers/:id",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="White Paper Details" fetchUrl={`${baseUrl}/whitepapers`} type="white-paper"/>
+      </Layout>
+    ),
+  },
+  {
+    path: "/events/:id",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="Event Details" fetchUrl={`${baseUrl}/events`} type="event"/>
+      </Layout>
+    ),
+  },
   // {
   //   path: "events",
   //   element: (

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 const countries = ["United States", "Canada", "United Kingdom", "Australia", "India"];
 
@@ -17,10 +18,12 @@ const schema = z.object({
   country: z.string().min(2, { message: "Country is required" }),
 });
 
-const Form = ({ closeDialog }) => {
+const Form = ({ closeDialog, type, id }) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
+
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
@@ -38,7 +41,9 @@ const Form = ({ closeDialog }) => {
       }
 
       console.log("Form submitted successfully");
+      
       if (closeDialog) closeDialog(); // Close the dialog on successful submission
+      navigate(`/${type}/${id}`);
     } catch (error) {
       console.error(error.message);
     }
