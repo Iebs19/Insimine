@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Blog, Service, TechStack, Client, ContentBlock, CaseStudy, WhitePaper, Testimonial
-from django.contrib.contenttypes.admin import GenericTabularInline
-from django.forms import BaseInlineFormSet, forms
+from .models import Blog, Service, TechStack, Client, ContentBlock, CaseStudy, WhitePaper, Testimonial, FormData
+from django.forms import forms
 
 class ContentBlockInline(admin.StackedInline):
     model = ContentBlock
@@ -44,7 +43,7 @@ class TechStackAdmin(admin.ModelAdmin):
 @admin.register(WhitePaper)
 class WhitePaperAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
-    search_fields = ('name',)
+    search_fields = ('title',)  # Use 'title' instead of 'name' here
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
@@ -52,6 +51,11 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 @admin.register(Testimonial)
-class ClientAdmin(admin.ModelAdmin):
-    list_display = ('author','company', 'content')
-    search_fields = ('author','company')
+class TestimonialAdmin(admin.ModelAdmin):  # Renamed class to avoid conflict
+    list_display = ('author', 'company', 'content')
+    search_fields = ('author', 'company')
+
+@admin.register(FormData)
+class FormDataAdmin(admin.ModelAdmin):  # Added FormData model
+    list_display = ('firstName', 'lastName', 'email', 'submitted_at')
+    search_fields = ('firstName', 'lastName', 'email')
