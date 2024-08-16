@@ -11,16 +11,19 @@ const ShimmerButton = React.forwardRef((
     background = "rgba(0, 0, 0, 1)",
     className,
     children,
+    onClick,
     href, // Add href prop
     ...props
   },
   ref,
 ) => {
+
   const Component = href ? 'a' : 'button'; // Choose between 'a' or 'button'
 
   return (
     <Component
-      href={href} // Apply href if it's an anchor
+      href={href}
+      onClick={onClick} // Apply href if it's an anchor
       style={
         {
           "--spread": "90deg",

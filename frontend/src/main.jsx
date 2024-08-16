@@ -10,10 +10,10 @@ import Layout from "./Layout.jsx";
 import Insights from "./pages/Insights.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import IndividualInsightSection from "./pages/IndividualInsightSection.jsx";
-import blogs from './data/blogs.json';
 import BookingIframe from "./pages/BookingIframe.jsx";
 import Layout2 from "./Layout2.jsx";
-import BlogPage from "./pages/BlogPage.jsx";
+
+const baseUrl = "https://insimine.com/admin/api";
 
 const router = createBrowserRouter([
   {
@@ -78,11 +78,19 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
+  // {
+  //   path: "/blog1",
+  //   element: (
+  //     <Layout>
+  //       <BlogPage />
+  //     </Layout>
+  //   ),
+  // },
   {
-    path: "/blog1",
+    path: "blogs",
     element: (
       <Layout>
-        <BlogPage />
+        <IndividualInsightSection title="Blogs" fetchUrl={`${baseUrl}/blog`}/>
       </Layout>
     ),
   },
@@ -90,7 +98,7 @@ const router = createBrowserRouter([
     path: "case-studies",
     element: (
       <Layout>
-        <IndividualInsightSection title="Case Studies" data={blogs}/>
+        <IndividualInsightSection title="Case Studies" fetchUrl={`${baseUrl}/case-study`}/>
       </Layout>
     ),
   },
@@ -98,18 +106,18 @@ const router = createBrowserRouter([
     path: "white-papers",
     element: (
       <Layout>
-        <IndividualInsightSection title="White Papers" data={blogs}/>
+        <IndividualInsightSection title="White Papers" fetchUrl={`${baseUrl}/whitepapers`}/>
       </Layout>
     ),
   },
-  {
-    path: "events",
-    element: (
-      <Layout>
-        <IndividualInsightSection title="Events" data={blogs}/>
-      </Layout>
-    ),
-  },
+  // {
+  //   path: "events",
+  //   element: (
+  //     <Layout>
+  //       <IndividualInsightSection title="Events" data={blogs}/>
+  //     </Layout>
+  //   ),
+  // },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
