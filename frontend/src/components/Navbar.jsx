@@ -13,9 +13,6 @@ const Logo = () => {
     const logo = theme === 'dark' ? logoWhite : logoBlue;
   
     return (
-        // <a href='/'>
-        //     <img src={logo} alt="company logo" className="h-8 w-full"/>
-        // </a>
         <Link to='/'>
             <img src={logo} alt="company logo" className="h-8 w-full"/>
         </Link>
@@ -72,15 +69,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
         onMouseLeave={() => setOpen(false)}
         className="relative w-fit h-fit"
       >
-        {/* <a href={href} className="relative font-bold hover:text-green transition-colors">
-          {children}
-          <span
-          style={{
-            transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
-          }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-lightBlue/60 transition-transform duration-300 ease-out"
-        />
-        </a> */}
+
         <Link to={href} className="relative font-bold hover:text-green transition-colors">
           {children}
           <span
@@ -148,13 +137,13 @@ const ServicesContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="/data-eng" className="block text-sm hover:underline">
+        <a href="/service/1" className="block text-sm hover:underline">
         Data Engineering
         </a>
-        <a href="/data-lake" className="block text-sm hover:underline">
+        <a href="/service/2" className="block text-sm hover:underline">
         Data Lakes & Big Data Management
         </a>
-        <a href="/gen-ai" className="block text-sm hover:underline">
+        <a href="/service/3" className="block text-sm hover:underline">
         AI & Gen AI Applications
         </a>
       </div>

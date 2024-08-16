@@ -11,7 +11,7 @@ const footerData = {
       title: 'Company',
       links: [
         { title: 'About Us', link: '/about-us' },
-        { title: 'Careers', link: '/careers' },
+        // { title: 'Careers', link: '/careers' },
         { title: 'Contact Us', link: '/contact-us' },
       ],
     },
@@ -19,23 +19,24 @@ const footerData = {
       title: 'Resources',
       links: [
         { title: 'Blog', link: '/blog' },
-        { title: 'Help Center', link: '/help' },
-        { title: 'Privacy Policy', link: '/privacy' },
+        { title: 'Case Study', link: '/case-study' },
+        // { title: 'Help Center', link: '/help' },
+        // { title: 'Privacy Policy', link: '/privacy' },
       ],
     },
-    {
-      title: 'Product',
-      links: [
-        { title: 'Features', link: '/features' },
-        { title: 'Pricing', link: '/pricing' },
-        { title: 'Integrations', link: '/integrations' },
-      ],
-    },
+    // {
+    //   title: 'Product',
+    //   links: [
+    //     // { title: 'Features', link: '/features' },
+    //     // { title: 'Pricing', link: '/pricing' },
+    //     // { title: 'Integrations', link: '/integrations' },
+    //   ],
+    // },
   ],
-  legal: [
-    { title: 'Privacy Policy', link: '/privacy' },
-    { title: 'Terms of Service', link: '/terms' },
-  ],
+//   legal: [
+//     { title: 'Privacy Policy', link: '/privacy' },
+//     { title: 'Terms of Service', link: '/terms' },
+//   ],
 };
 
 const Logo = () => {
@@ -74,6 +75,7 @@ const Footer = () => {
             <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
               <Logo />
             </div>
+            <div className='flex gap-44 pr-24'>
             {footerData.menus.map((menu, index) => (
               <div key={index} className="w-full lg:w-1/4 mb-8 lg:mb-0">
                 <h2 className={`text-lg font-semibold mb-4 ${textColor}`}>{menu.title}</h2>
@@ -96,8 +98,10 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
+            </div>
+
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 flex justify-between items-center px-8">
+          {/* <div className="border-t border-gray-700 mt-8 pt-8 flex justify-between items-center px-8">
             <p className={`text-sm ${textColor}`}>© 2024 InsiMine. All rights reserved.</p>
             <div className="flex space-x-4">
               {footerData.legal.map((item, index) => (
@@ -112,7 +116,7 @@ const Footer = () => {
                 </motion.a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
     // </motion.div>
   );

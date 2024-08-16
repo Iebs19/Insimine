@@ -24,9 +24,7 @@ const Layout = ({ children }) => {
     <div>
       <Navbar/>
       <div className='mt-12 p-2'>
-        {/* <NeonGradientCard className="w-1/2 h-auto items-center justify-center text-center bg-transparent"> */}
-          {children}
-        {/* </NeonGradientCard> */}
+        {children}
       </div>
       <Particles
         className="absolute inset-0 pointer-events-none"

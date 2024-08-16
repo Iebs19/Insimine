@@ -73,8 +73,8 @@ const IndividualInsightSection = ({ title, fetchUrl, type }) => {
           <RevealCard
             key={item.id} 
             title={item.title}
-            image={item.image} // Adjust according to your data structure
-            href={`http:localhost:8000/api/${type}/${item.id}`} // Updated to include type and ID
+            image={item.image}
+            href={`http://localhost:8000/api/${type}/${item.id}`}
             height="300px"
             type={type}
             id={item.id}

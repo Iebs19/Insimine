@@ -104,15 +104,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const IndividualPage = () => {
-    const { type, id } = useParams(); 
+const IndividualPage = ({type}) => {
+    const { id } = useParams(); 
     const [page, setPage] = useState(null);
     const getFullImageUrl = (relativePath) => `http://localhost:8000${relativePath}`;
 
     useEffect(() => {
         const fetchPageData = async () => {
             try {
-                const response = await fetch(`http://www.insimine.com/admin/api/${type}/${id}`);
+                // const response = await fetch(`https://www.insimine.com/admin/api/${type}/${id}`);
+                const response = await fetch(`http://localhost:8000/api/${type}/${id}`);
+                console.log(type,id);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

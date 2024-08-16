@@ -32,7 +32,7 @@ function Services() {
                 InsiMine offers a comprehensive data engineering framework designed specifically for the pharmaceutical and healthcare industries. Our services help you develop a robust data strategy, ensure data governance, and optimize data management processes.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'>
+                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/1'>
                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Learn More
                   </span>
@@ -61,10 +61,6 @@ function Services() {
                   </AccordionItem>
                 </Accordion>
               </div>
-              
-
-
-
             </div>
           </div>
         </div>
@@ -81,7 +77,7 @@ function Services() {
                 Transform your pharmaceutical and healthcare business with a centralized data repository. Our data lakes and big data management services enable you to manage vast amounts of structured and unstructured data efficiently, providing scalable and flexible data management and analytics capabilities.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'>
+                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'href='/service/2'>
                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Learn More
                   </span>
@@ -122,7 +118,7 @@ function Services() {
                 Leverage the power of AI and Gen AI to transform your pharmaceutical and healthcare operations. Our AI and Gen AI applications provide advanced analytics, predictive modeling, and automated decision-making capabilities to drive growth, improve patient outcomes, and enhance operational efficiency.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'>
+                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/3'>
                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Learn More
                   </span>

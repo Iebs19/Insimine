@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs.jsx";
 import IndividualInsightSection from "./pages/IndividualInsightSection.jsx";
 import BookingIframe from "./pages/BookingIframe.jsx";
 import Layout2 from "./Layout2.jsx";
+import IndividualPage from "./pages/IndividualPage.jsx";
 
 // const baseUrl = "https://insimine.com/admin/api";
 const baseUrl = "http://localhost:8000/api";
@@ -79,14 +80,6 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
-  // {
-  //   path: "/blog1",
-  //   element: (
-  //     <Layout>
-  //       <BlogPage />
-  //     </Layout>
-  //   ),
-  // },
   {
     path: "/blogs",
     element: (
@@ -115,7 +108,7 @@ const router = createBrowserRouter([
     path: "/blog/:id",
     element: (
       <Layout>
-        <IndividualInsightSection title="Blog Details" fetchUrl={`${baseUrl}/blog`} type="blog"/>
+        <IndividualPage type='blog'/>
       </Layout>
     ),
   },
@@ -123,7 +116,7 @@ const router = createBrowserRouter([
     path: "/case-studies/:id",
     element: (
       <Layout>
-        <IndividualInsightSection title="Case Study Details" fetchUrl={`${baseUrl}/case-study`} type="case-study"/>
+        <IndividualPage type='case-study'/>
       </Layout>
     ),
   },
@@ -131,23 +124,23 @@ const router = createBrowserRouter([
     path: "/white-papers/:id",
     element: (
       <Layout>
-        <IndividualInsightSection title="White Paper Details" fetchUrl={`${baseUrl}/whitepapers`} type="white-paper"/>
+        <IndividualPage type='white-paper'/>
       </Layout>
     ),
   },
   {
-    path: "/events/:id",
+    path: "/service/:id",
     element: (
       <Layout>
-        <IndividualInsightSection title="Event Details" fetchUrl={`${baseUrl}/events`} type="event"/>
+        <IndividualPage type='service'/>
       </Layout>
     ),
   },
   // {
-  //   path: "events",
+  //   path: "/events/:id",
   //   element: (
   //     <Layout>
-  //       <IndividualInsightSection title="Events" data={blogs}/>
+  //       <IndividualInsightSection title="Event Details" fetchUrl={`${baseUrl}/events`} type="event"/>
   //     </Layout>
   //   ),
   // },
