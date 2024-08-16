@@ -13,7 +13,8 @@ import IndividualInsightSection from "./pages/IndividualInsightSection.jsx";
 import BookingIframe from "./pages/BookingIframe.jsx";
 import Layout2 from "./Layout2.jsx";
 
-const baseUrl = "https://insimine.com/admin/api";
+// const baseUrl = "https://insimine.com/admin/api";
+const baseUrl = "http://localhost:8000/api";
 
 const router = createBrowserRouter([
   {
@@ -87,26 +88,26 @@ const router = createBrowserRouter([
   //   ),
   // },
   {
-    path: "blogs",
+    path: "/blogs",
     element: (
       <Layout>
-        <IndividualInsightSection title="Blogs" fetchUrl={`${baseUrl}/blog`}/>
+        <IndividualInsightSection title="Blogs" fetchUrl={`${baseUrl}/blog`} type='blog'/>
       </Layout>
     ),
   },
   {
-    path: "case-studies",
+    path: "/case-studies",
     element: (
       <Layout>
-        <IndividualInsightSection title="Case Studies" fetchUrl={`${baseUrl}/case-study`}/>
+        <IndividualInsightSection title="Case Studies" fetchUrl={`${baseUrl}/case-study`} type='case-study'/>
       </Layout>
     ),
   },
   {
-    path: "white-papers",
+    path: "/white-papers",
     element: (
       <Layout>
-        <IndividualInsightSection title="White Papers" fetchUrl={`${baseUrl}/whitepapers`}/>
+        <IndividualInsightSection title="White Papers" fetchUrl={`${baseUrl}/whitepapers`} type='white-paper'/>
       </Layout>
     ),
   },

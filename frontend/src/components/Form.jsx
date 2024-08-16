@@ -20,7 +20,7 @@ const schema = z.object({
   country: z.string().min(2, { message: "Country is required" }),
 });
 
-const Form = () => {
+const Form = ({type, id}) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });

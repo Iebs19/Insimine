@@ -12,7 +12,7 @@ import {
 } from "../components/ui/dialog";
 import Form from "./Form";
 
-const RevealCard = ({ title, image, href = "/", height }) => {
+const RevealCard = ({ title, image, href = "/", height, type, id }) => {
   return (
     <div className={`relative h-[${height}] w-full group`}>
       <div className="flex h-1/2 flex-col justify-center bg-black p-6 z-10">
@@ -99,7 +99,7 @@ const RevealCard = ({ title, image, href = "/", height }) => {
             <DialogTitle>Form</DialogTitle>
             <DialogDescription>fill the form</DialogDescription>
           </DialogHeader>
-          <Form />
+          <Form type={type} id={id}/>
           <DialogFooter className="sm:justify-center px-4">
             <DialogClose asChild>
               <Button type="button" variant="secondary">

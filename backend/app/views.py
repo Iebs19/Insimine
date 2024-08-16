@@ -22,29 +22,42 @@ class TestimonialViewSet(viewsets.ModelViewSet):
     queryset = Testimonial.objects.all()
     serializer_class = TestimonialSerializer
 
-class ContentBlockListCreateView(generics.ListCreateAPIView):
+class ContentBlockViewSet(viewsets.ModelViewSet):
     queryset = ContentBlock.objects.all()
     serializer_class = ContentBlockSerializer
 
-class ContentBlockDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = ContentBlock.objects.all()
-    serializer_class = ContentBlockSerializer
-
-class FormDataCreateView(generics.CreateAPIView):
+class FormDataViewSet(viewsets.ModelViewSet):
     queryset = FormData.objects.all()
     serializer_class = FormDataSerializer
+
+# class ContentBlockListCreateView(generics.ListCreateAPIView):
+#     queryset = ContentBlock.objects.all()
+#     serializer_class = ContentBlockSerializer
+
+# class ContentBlockDetailView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = ContentBlock.objects.all()
+#     serializer_class = ContentBlockSerializer
+
+# class FormDataCreateView(generics.CreateAPIView):
+#     queryset = FormData.objects.all()
+#     serializer_class = FormDataSerializer
 
 class TechStackViewSet(viewsets.ModelViewSet):
     queryset = TechStack.objects.all()
     serializer_class = TechStackSerializer
 
-class WhitePaperListCreateView(generics.ListCreateAPIView):
+
+class WhitePaperViewSet(viewsets.ModelViewSet):
     queryset = WhitePaper.objects.all()
     serializer_class = WhitePaperSerializer
 
-class WhitePaperDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = WhitePaper.objects.all()
-    serializer_class = WhitePaperSerializer
+# class WhitePaperListCreateView(generics.ListCreateAPIView):
+#     queryset = WhitePaper.objects.all()
+#     serializer_class = WhitePaperSerializer
+
+# class WhitePaperDetailView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = WhitePaper.objects.all()
+#     serializer_class = WhitePaperSerializer
 
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
