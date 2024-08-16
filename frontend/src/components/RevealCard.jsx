@@ -69,11 +69,11 @@ const RevealCard = ({ title, image, href = "/", height, type, id }) => {
             <DialogDescription>Fill the form</DialogDescription>
           </DialogHeader>
           <Form closeDialog={handleDialogClose} />
-          <DialogFooter className="sm:justify-center px-4">
+          {/* <DialogFooter className="sm:justify-center px-4">
             <Button type="button" onClick={handleDialogClose} variant="secondary">
               Close
             </Button>
-          </DialogFooter>
+          </DialogFooter> */}
         </DialogContent>
       </Dialog>
     </div>

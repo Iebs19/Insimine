@@ -121,7 +121,7 @@ const DialogFooter = ({ className, ...props }) => {
       )}
       {...props}
     >
-      <DialogPrimitive.Close asChild>
+      {/* <DialogPrimitive.Close asChild>
         <Button
           type="button"
           variant="secondary"
@@ -131,9 +131,9 @@ const DialogFooter = ({ className, ...props }) => {
             isLight ? "hover:bg-green" : "hover:bg-blue-500"
           )}
         >
-          Submit
+          Close
         </Button>
-      </DialogPrimitive.Close>
+      </DialogPrimitive.Close> */}
     </div>
   );
 };
