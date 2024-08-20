@@ -127,8 +127,8 @@ function Services() {
             </div>
           </div>
           <div className='w-1/2 overflow-y-auto'>
-            <div className='flex flex-col text-2xl'>
-
+            <div className='flex flex-col text-2xl pt-12'>
+            <p className='text-3xl font-nas text-left'>Key offerings :-</p>
               <Accordion type="multiple">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className='font-nas'>•	AI-Powered Analytics</AccordionTrigger>
