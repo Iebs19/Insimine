@@ -122,7 +122,7 @@ const Insights = () => {
       .then(data => setCaseStudies(data.slice(0, 3))) // Adjust this if the API response format is different
 
     // Fetch white papers
-    fetch("https://insimine.com/admin/api/whitepapers/")
+    fetch("https://insimine.com/admin/api/white-paper/")
       .then(response => response.json())
       .then(data => setWhitePapers(data.slice(0, 3))) // Adjust this if the API response format is different
   }, []);

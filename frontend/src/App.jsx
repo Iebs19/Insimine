@@ -18,7 +18,7 @@ function App() {
         <div className='pt-24'>
           <Insights />
         </div>
-        <div className='pt-24'>
+        <div className='pt-12'>
           <ServicesSection />
         </div>
         <div className='pt-24'>

@@ -100,7 +100,7 @@ const router = createBrowserRouter([
     path: "/white-papers",
     element: (
       <Layout>
-        <IndividualInsightSection title="White Papers" fetchUrl={`${baseUrl}/whitepapers`} type='white-paper'/>
+        <IndividualInsightSection title="White Papers" fetchUrl={`${baseUrl}/white-paper`} type='white-paper'/>
       </Layout>
     ),
   },
