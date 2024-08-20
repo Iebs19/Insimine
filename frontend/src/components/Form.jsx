@@ -18,7 +18,7 @@ const schema = z.object({
   country: z.string().min(2, { message: "Country is required" }),
 });
 
-const Form = ({ closeDialog, type, id }) => {
+const Form = ({ closeDialog, type, id, title }) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
@@ -27,20 +27,27 @@ const Form = ({ closeDialog, type, id }) => {
 
   const onSubmit = async (data) => {
     try {
+      // Construct the payload with form data, type, and id
+      const payload = {
+        ...data,
+        type: type,  // Add the type value
+        title: title   // Add the id value
+      };
+  
       const response = await fetch("https://insimine.com/admin/api/form-submit/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),  // Send the constructed payload
       });
-      console.log(data);
-
+  
       if (!response.ok) {
         throw new Error("Form submission failed");
       }
-
+  
       console.log("Form submitted successfully");
+      console.log(payload);
       
       if (closeDialog) closeDialog(); // Close the dialog on successful submission
       navigate(`/${type}/${id}`);
@@ -48,7 +55,7 @@ const Form = ({ closeDialog, type, id }) => {
       console.error(error.message);
     }
   };
-
+  
   return (
     <div className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>

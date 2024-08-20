@@ -41,7 +41,7 @@ class ServiceSerializer(serializers.ModelSerializer):
 class FormDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = FormData
-        fields = ['id', 'firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'country', 'submitted_at']
+        fields = ['id', 'firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'country', 'submitted_at','type','title']
 
 class TechStackSerializer(serializers.ModelSerializer):
     class Meta:

@@ -70,18 +70,35 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
+# class FormData(models.Model):
+#     firstName = models.CharField(max_length=100,default='Default First Name')
+#     lastName = models.CharField(max_length=100,default='Default Last Name')
+#     email = models.EmailField()
+#     phone = models.CharField(max_length=20)
+#     company = models.CharField(max_length=100,default='Default Company')
+#     designation = models.CharField(max_length=100,default='Default Designation')
+#     country = models.CharField(max_length=30,default='USA')
+#     submitted_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return f"{self.firstName} {self.lastName}"
+
 class FormData(models.Model):
-    firstName = models.CharField(max_length=100,default='Default First Name')
-    lastName = models.CharField(max_length=100,default='Default Last Name')
+    firstName = models.CharField(max_length=100, default='Default First Name')
+    lastName = models.CharField(max_length=100, default='Default Last Name')
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    company = models.CharField(max_length=100,default='Default Company')
-    designation = models.CharField(max_length=100,default='Default Designation')
-    country = models.CharField(max_length=30,default='USA')
+    phone = models.CharField(max_length=20, blank=True, null=True) 
+    company = models.CharField(max_length=100, default='Default Company')
+    designation = models.CharField(max_length=100, blank=True, null=True)
+    country = models.CharField(max_length=30, default='USA')
+    type = models.CharField(max_length=50, default='')  
+    title = models.CharField(max_length=100, default='')    
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+
+
 
 class TechStack(models.Model):
     name = models.CharField(max_length=100)
