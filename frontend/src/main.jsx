@@ -105,6 +105,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/events",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="Events" fetchUrl={`${baseUrl}/event`} type='event'/>
+      </Layout>
+    ),
+  },
+  {
     path: "/blog/:id",
     element: (
       <Layout>
@@ -113,21 +121,21 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/case-studies/:id",
+    path: "/case-study/:id",
     element: (
       <Layout>
         <IndividualPage type='case-study'/>
       </Layout>
     ),
   },
-  {
-    path: "/white-papers/:id",
-    element: (
-      <Layout>
-        <IndividualPage type='white-paper'/>
-      </Layout>
-    ),
-  },
+  // {
+  //   path: "/white-papers/:id",
+  //   element: (
+  //     <Layout>
+  //       <IndividualPage type='white-paper'/>
+  //     </Layout>
+  //   ),
+  // },
   {
     path: "/service/:id",
     element: (
@@ -136,14 +144,14 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
-  // {
-  //   path: "/events/:id",
-  //   element: (
-  //     <Layout>
-  //       <IndividualInsightSection title="Event Details" fetchUrl={`${baseUrl}/events`} type="event"/>
-  //     </Layout>
-  //   ),
-  // },
+  {
+    path: "/event/:id",
+    element: (
+      <Layout>
+        <IndividualPage type="event"/>
+      </Layout>
+    ),
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

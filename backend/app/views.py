@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework import viewsets, generics
 from .models import Blog, Service, TechStack, Client, ContentBlock, FormData, CaseStudy, WhitePaper, Testimonial
-from .serializers import BlogSerializer, ServiceSerializer, TechStackSerializer, ClientSerializer, ContentBlockSerializer, FormDataSerializer, CaseStudySerializer, WhitePaperSerializer, TestimonialSerializer
+from .serializers import BlogSerializer, ServiceSerializer, TechStackSerializer, ClientSerializer, ContentBlockSerializer, FormDataSerializer, CaseStudySerializer, WhitePaperSerializer, TestimonialSerializer, EventSerializer
 
 
 class BlogViewSet(viewsets.ModelViewSet):
@@ -17,6 +17,10 @@ class CaseStudyViewSet(viewsets.ModelViewSet):
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
 
 class TestimonialViewSet(viewsets.ModelViewSet):
     queryset = Testimonial.objects.all()

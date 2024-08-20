@@ -4,14 +4,16 @@ from django.utils import timezone
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 
-def content_block_image_upload_to(instance, filename):
-    if instance.blog:
-        return os.path.join('blog_images/', filename)
-    elif instance.case_study:
-        return os.path.join('case_study_images/', filename)
-    elif instance.service:
-        return os.path.join('service_images/', filename)
-    return os.path.join('other_images/', filename)
+# def content_block_image_upload_to(instance, filename):
+#     if instance.blog:
+#         return os.path.join('blog_images/', filename)
+#     elif instance.case_study:
+#         return os.path.join('case_study_images/', filename)
+#     elif instance.service:
+#         return os.path.join('service_images/', filename)
+#     elif instance.event:
+#         return os.path.join('event_images/', filename)
+#     return os.path.join('other_images/', filename)
 
 class ContentBlock(models.Model):
     TEXT = 'text'
@@ -32,6 +34,7 @@ class ContentBlock(models.Model):
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
     case_study = models.ForeignKey('CaseStudy', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
     service = models.ForeignKey('Service', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
 
     block_type = models.CharField(max_length=10, choices=BLOCK_TYPE_CHOICES)
     text = models.TextField(blank=True)
@@ -71,6 +74,15 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
+class Event(models.Model):
+    title = models.CharField(max_length=200, default='Default Title')
+    mainImage = models.ImageField(upload_to='event_images/', null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 
 class FormData(models.Model):
     firstName = models.CharField(max_length=100, default='Default First Name')
@@ -89,13 +101,13 @@ class FormData(models.Model):
 
 
 
-class TechStack(models.Model):
-    name = models.CharField(max_length=100)
-    desc = models.TextField()
-    image = models.ImageField(upload_to='tech_images/', null=True, blank=True)
+# class TechStack(models.Model):
+#     name = models.CharField(max_length=100)
+#     desc = models.TextField()
+#     image = models.ImageField(upload_to='tech_images/', null=True, blank=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 class WhitePaper(models.Model):
     title = models.CharField(max_length=200)

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import BlogViewSet, ContentBlockViewSet,  TechStackViewSet, ClientViewSet, FormDataViewSet,CaseStudyViewSet, WhitePaperViewSet, ServiceViewSet, TestimonialViewSet
+from .views import BlogViewSet, ContentBlockViewSet,  TechStackViewSet, ClientViewSet, FormDataViewSet,CaseStudyViewSet, WhitePaperViewSet, ServiceViewSet, TestimonialViewSet, EventViewSet
 
 router = DefaultRouter()
 router.register(r'blog', BlogViewSet)
@@ -12,6 +12,7 @@ router.register(r'testinomial', TestimonialViewSet)
 router.register(r'form-submit', FormDataViewSet)
 router.register(r'white-paper', WhitePaperViewSet)
 router.register(r'content-block', ContentBlockViewSet)
+router.register(r'event', EventViewSet)
 
 
 urlpatterns = [

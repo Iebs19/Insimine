@@ -11,7 +11,7 @@ import {
 } from "../components/ui/dialog";
 import Form from "./Form";
 
-const RevealCard = ({ title, image, href = "/", height, type, id }) => {
+const RevealCard = ({ title, image, height, type, id }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleDialogClose = () => {

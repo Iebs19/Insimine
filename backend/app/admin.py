@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Service, TechStack, Client, ContentBlock, CaseStudy, WhitePaper, Testimonial, FormData
+from .models import Blog, Service, TechStack, Client, ContentBlock, CaseStudy, WhitePaper, Testimonial, FormData, Event
 from django.forms import forms
 
 class ContentBlockInline(admin.StackedInline):
@@ -35,10 +35,14 @@ class CaseStudyAdmin(BaseContentAdmin):
 class ServiceAdmin(BaseContentAdmin):
     pass
 
-@admin.register(TechStack)
-class TechStackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'desc')
-    search_fields = ('name',)
+@admin.register(Event)
+class EventAdmin(BaseContentAdmin):
+    pass
+
+# @admin.register(TechStack)
+# class TechStackAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'desc')
+#     search_fields = ('name',)
 
 @admin.register(WhitePaper)
 class WhitePaperAdmin(admin.ModelAdmin):

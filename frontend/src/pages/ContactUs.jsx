@@ -1,17 +1,14 @@
 import React from 'react';
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { NeonGradientCard } from '../components/magicui/neon-gradient-card';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
-import Form from '@/components/Form';
+import ContactUsForm from '@/components/ContactUsForm';
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from '@/components/ui/button';
 
 function ContactUs() {
     return (
@@ -26,10 +23,7 @@ function ContactUs() {
             </div>
             <div className='p-4 text-black dark:text-white mt-4'>
                 <NeonGradientCard className='w-1/2 mx-auto'>
-                    <Form/>
-                    <button type="submit" className='mt-4 p-2 bg-blue-500 w-40 text-white rounded'>
-                            Submit
-                        </button>
+                    <ContactUsForm/>
                 </NeonGradientCard>
             </div>
             <div className='flex flex-col justify-center'>

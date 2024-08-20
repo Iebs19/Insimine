@@ -43,7 +43,7 @@ function BlogSection() {
             key={items[0].id} 
             title={items[0].title} 
             image={items[0].mainImage} 
-            href={`https://insimine.com/admin/api/${items[0].type}/${items[0].id}`} 
+            // href={`https://insimine.com/admin/api/${items[0].type}/${items[0].id}`} 
             height="400px" 
             type={items[0].type}
             id={items[0].id}
@@ -54,7 +54,7 @@ function BlogSection() {
                 key={item.id}
                 title={item.title}
                 image={item.mainImage}
-                href={`https://insimine.com/admin/api/${item.type}/${item.id}`}
+                // href={`https://insimine.com/admin/api/${item.type}/${item.id}`}
                 height="200px"
                 type={item.type}
                 id={item.id}
