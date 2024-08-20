@@ -73,7 +73,7 @@ const IndividualInsightSection = ({ title, fetchUrl, type }) => {
           <RevealCard
             key={item.id} 
             title={item.title}
-            image={item.image}
+            image={item.mainImage}
             href={`https://insimine.com/admin/api/${type}/${item.id}`}
             height="300px"
             type={type}

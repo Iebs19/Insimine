@@ -174,7 +174,7 @@ const IndividualPage = ({type}) => {
                 {page.title}
             </div>
             <div className='flex justify-center pt-12'>
-                <img src={page.mainImage} alt={page.title} width='600' />
+                <img src={page.mainImage} alt={page.title} width='full' />
             </div>
             <div className='flex flex-col gap-4 gap-y-12 pt-12 px-12'>
                 {page.content_blocks.map((block, index) => (

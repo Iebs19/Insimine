@@ -84,7 +84,7 @@ const InsightsColumn = ({ title, href, data }) => {
           <RevealCard
             key={index}
             title={item.title}
-            image={item.image} // Update to match your data structure
+            image={item.mainImage} // Update to match your data structure
             href={`/details/${item.id}`} // Adjust the URL structure based on your routing
           />
         ))}
