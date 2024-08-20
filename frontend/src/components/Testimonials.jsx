@@ -36,7 +36,7 @@ function Testimonials() {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/testinomial/"); // Replace with your actual API endpoint
+        const response = await fetch("https://insimine.com/admin/api/testinomial/"); // Replace with your actual API endpoint
         const data = await response.json();
         setReviews(data);
       } catch (err) {

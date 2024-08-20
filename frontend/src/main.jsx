@@ -15,7 +15,7 @@ import Layout2 from "./Layout2.jsx";
 import IndividualPage from "./pages/IndividualPage.jsx";
 
 // const baseUrl = "https://insimine.com/admin/api";
-const baseUrl = "http://localhost:8000/api";
+const baseUrl = "https://insimine.com/admin/api";
 
 const router = createBrowserRouter([
   {

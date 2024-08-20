@@ -112,17 +112,17 @@ const Insights = () => {
 
   useEffect(() => {
     // Fetch blogs
-    fetch("http://localhost:8000/api/blog/")
+    fetch("https://insimine.com/admin/api/blog/")
       .then(response => response.json())
       .then(data => setBlogs(data.slice(0, 3))) // Adjust this if the API response format is different
 
     // Fetch case studies
-    fetch("http://localhost:8000/api/case-study/")
+    fetch("https://insimine.com/admin/api/case-study/")
       .then(response => response.json())
       .then(data => setCaseStudies(data.slice(0, 3))) // Adjust this if the API response format is different
 
     // Fetch white papers
-    fetch("http://localhost:8000/api/whitepapers/")
+    fetch("https://insimine.com/admin/api/whitepapers/")
       .then(response => response.json())
       .then(data => setWhitePapers(data.slice(0, 3))) // Adjust this if the API response format is different
   }, []);

@@ -27,7 +27,7 @@ const Form = ({ closeDialog, type, id }) => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/form-submit/", {
+      const response = await fetch("https://insimine.com/admin/api/form-submit/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

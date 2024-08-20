@@ -4,12 +4,12 @@
 
 // const IndividualPage = () => {
 //     const [page, setPage] = useState(null);
-//     const getFullImageUrl = (relativePath) => `http://localhost:8000${relativePath}`;
+//     const getFullImageUrl = (relativePath) => `https://insimine.com/admin/api${relativePath}`;
 
 //     useEffect(() => {
 //         const fetchPageData = async () => {
 //             try {
-//                 const response = await fetch('http://localhost:8000/api/blog/1'); // Adjust the URL as needed
+//                 const response = await fetch('https://insimine.com/admin/api/api/blog/1'); // Adjust the URL as needed
 //                 if (!response.ok) {
 //                     throw new Error('Network response was not ok');
 //                 }
@@ -107,13 +107,13 @@ import { useParams } from 'react-router-dom';
 const IndividualPage = ({type}) => {
     const { id } = useParams(); 
     const [page, setPage] = useState(null);
-    const getFullImageUrl = (relativePath) => `http://localhost:8000${relativePath}`;
+    const getFullImageUrl = (relativePath) => `https://insimine.com/admin/api${relativePath}`;
 
     useEffect(() => {
         const fetchPageData = async () => {
             try {
                 // const response = await fetch(`https://www.insimine.com/admin/api/${type}/${id}`);
-                const response = await fetch(`http://localhost:8000/api/${type}/${id}`);
+                const response = await fetch(`https://insimine.com/admin/api/${type}/${id}`);
                 console.log(type,id);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -186,7 +186,7 @@ const IndividualPage = ({type}) => {
                                 </div>
                                 {block.text && (
                                     <div className='text-center text-sm pt-2'>
-                                        <sub>{block.text}</sub>
+                                        {/* <sub>{block.text}</sub> */}
                                     </div>
                                 )}
                             </>
