@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ourcapabilities from "..//assets/1st-Infographic-Transparent.png";
+import ourcapabilitiesdark from "..//assets/Dark-Mode-Infographics.png"
 import ShimmerButton from './magicui/shimmer-button';
 import { NeonGradientCard } from './magicui/neon-gradient-card';
 
@@ -25,7 +26,13 @@ function ServicesSection() {
                 <div className='relative group w-1/3'>
                     <img
                         src={ourcapabilities}
-                        className="invert-0"
+                        className="invert-0 block dark:hidden"
+                        alt="Our Capabilities"
+                    />
+                    <img
+                        src={ourcapabilitiesdark}
+                        className="invert-0 hidden dark:block"
+                        alt="Our Capabilities"
                     />
                     <motion.div {...floatAnimation} className="absolute bottom-0 left-[-350px] bg-background w-full h-auto">
                         <NeonGradientCard className='bg-background'>
