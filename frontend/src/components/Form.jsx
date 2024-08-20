@@ -22,17 +22,18 @@ const Form = ({ closeDialog, type, id, title }) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
-
+  console.log(type,id);
   const navigate = useNavigate();
 
+  
   const onSubmit = async (data) => {
     try {
-      // Construct the payload with form data, type, and id
       const payload = {
         ...data,
-        type: type,  // Add the type value
-        title: title   // Add the id value
+        type: type,
+        title: title
       };
+   
   
       const response = await fetch("https://insimine.com/admin/api/form-submit/", {
         method: "POST",
@@ -47,15 +48,31 @@ const Form = ({ closeDialog, type, id, title }) => {
       }
   
       console.log("Form submitted successfully");
-      console.log(payload);
-      
-      if (closeDialog) closeDialog(); // Close the dialog on successful submission
-      navigate(`/${type}/${id}`);
+
+  
+      if (type === 'white-paper') {
+        const whitePaperResponse = await fetch(`https://insimine.com/admin/api/white-paper/${id}`);
+        if (!whitePaperResponse.ok) {
+          throw new Error("Failed to fetch white paper details");
+        }
+  
+        const whitePaperData = await whitePaperResponse.json();
+        const pdfUrl = whitePaperData.pdf;
+
+        window.open(pdfUrl, '_blank');
+        closeDialog();
+      } else {
+        if (closeDialog) closeDialog();
+        navigate(`/${type}/${id}`);
+      }
     } catch (error) {
       console.error(error.message);
     }
   };
   
+
+
+
   return (
     <div className="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>

@@ -72,7 +72,7 @@ import RevealCard from "@/components/RevealCard";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 
 // Update InsightsColumn to receive data as a prop
-const InsightsColumn = ({ title, href, data }) => {
+const InsightsColumn = ({ title, href, data, type }) => {
   return (
     <div>
       <div className="font-nas text-3xl ml-16">
@@ -84,8 +84,10 @@ const InsightsColumn = ({ title, href, data }) => {
           <RevealCard
             key={index}
             title={item.title}
-            image={item.mainImage} // Update to match your data structure
-            href={`/details/${item.id}`} // Adjust the URL structure based on your routing
+            image={item.mainImage} 
+            type={type}
+            id={item.id}
+            href={item.pdf ? item.pdf : null}
           />
         ))}
       </div>
@@ -122,7 +124,7 @@ const Insights = () => {
       .then(data => setCaseStudies(data.slice(0, 3))) // Adjust this if the API response format is different
 
     // Fetch white papers
-    fetch("https://insimine.com/admin/api/whitepapers/")
+    fetch("https://insimine.com/admin/api/white-paper/")
       .then(response => response.json())
       .then(data => setWhitePapers(data.slice(0, 3))) // Adjust this if the API response format is different
   }, []);
@@ -131,9 +133,9 @@ const Insights = () => {
     <div className="flex flex-col justify-center pt-4 gap-8">
       <div className="font-nas font-bold text-7xl">Insights</div>
       <div className="flex flex-col gap-8">
-        <InsightsColumn title="Blogs" href="/blogs" data={blogs} />
-        <InsightsColumn title="Case Studies" href="/case-studies" data={caseStudies} />
-        <InsightsColumn title="White Papers" href="/white-papers" data={whitePapers} />
+        <InsightsColumn title="Blogs" href="/blogs" data={blogs} type='blog'/>
+        <InsightsColumn title="Case Studies" href="/case-studies" data={caseStudies} type='case-study'/>
+        <InsightsColumn title="White Papers" href="/white-papers" data={whitePapers} type='white-paper'/>
       </div>
     </div>
   );

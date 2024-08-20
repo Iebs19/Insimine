@@ -25,6 +25,7 @@ class ContentBlock(models.Model):
         ('heading', 'Heading'),
         ('subheading', 'Subheading'),
         ('list', 'List'),
+        ('point', 'Point'),
         ('normal', 'Normal Text'),
     ]
 
@@ -70,18 +71,6 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
-# class FormData(models.Model):
-#     firstName = models.CharField(max_length=100,default='Default First Name')
-#     lastName = models.CharField(max_length=100,default='Default Last Name')
-#     email = models.EmailField()
-#     phone = models.CharField(max_length=20)
-#     company = models.CharField(max_length=100,default='Default Company')
-#     designation = models.CharField(max_length=100,default='Default Designation')
-#     country = models.CharField(max_length=30,default='USA')
-#     submitted_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return f"{self.firstName} {self.lastName}"
 
 class FormData(models.Model):
     firstName = models.CharField(max_length=100, default='Default First Name')
