@@ -1,19 +1,19 @@
 from rest_framework import serializers
 from .models import Blog, Service, TechStack, Client, ContentBlock, FormData, CaseStudy, WhitePaper, Testimonial, Event
+from django.core.files.storage import default_storage
 
 class ContentBlockSerializer(serializers.ModelSerializer):
-    text_type = serializers.SerializerMethodField()
+    text = serializers.CharField(allow_blank=True)
     image = serializers.SerializerMethodField()
+    image_size = serializers.ChoiceField(choices=ContentBlock.IMAGE_SIZE_CHOICES)
 
     class Meta:
         model = ContentBlock
-        fields = ['block_type', 'text', 'text_type', 'image']
-
-    def get_text_type(self, obj):
-        return obj.text_type if obj.block_type == ContentBlock.TEXT else None
+        fields = ['block_type', 'text', 'image', 'image_size']
 
     def get_image(self, obj):
-        return obj.image.url if obj.block_type == ContentBlock.IMAGE else None
+        return obj.image.url if obj.image and obj.block_type == ContentBlock.IMAGE else None
+
 
 
 class BlogSerializer(serializers.ModelSerializer):
@@ -50,10 +50,12 @@ class FormDataSerializer(serializers.ModelSerializer):
         model = FormData
         fields = ['id', 'firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'country', 'submitted_at','type','title']
 
-# class TechStackSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = TechStack
-#         fields = '__all__'
+class TechStackSerializer(serializers.ModelSerializer):
+    content_blocks = ContentBlockSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = TechStack
+        fields = ['id', 'title', 'mainImage','created_at', 'updated_at', 'content_blocks']
 
 class WhitePaperSerializer(serializers.ModelSerializer):
     class Meta:

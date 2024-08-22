@@ -113,6 +113,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/techstacks",
+    element: (
+      <Layout>
+        <IndividualInsightSection title="TechStacks" fetchUrl={`${baseUrl}/techstack`} type='techstack'/>
+      </Layout>
+    ),
+  },
+  {
     path: "/blog/:id",
     element: (
       <Layout>
@@ -128,14 +136,14 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
-  // {
-  //   path: "/white-papers/:id",
-  //   element: (
-  //     <Layout>
-  //       <IndividualPage type='white-paper'/>
-  //     </Layout>
-  //   ),
-  // },
+  {
+    path: "/techstack/:id",
+    element: (
+      <Layout>
+        <IndividualPage type='techstack'/>
+      </Layout>
+    ),
+  },
   {
     path: "/service/:id",
     element: (

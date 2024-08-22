@@ -3,17 +3,40 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from ckeditor.fields import RichTextField
 
-# def content_block_image_upload_to(instance, filename):
-#     if instance.blog:
-#         return os.path.join('blog_images/', filename)
-#     elif instance.case_study:
-#         return os.path.join('case_study_images/', filename)
-#     elif instance.service:
-#         return os.path.join('service_images/', filename)
-#     elif instance.event:
-#         return os.path.join('event_images/', filename)
-#     return os.path.join('other_images/', filename)
+# class ContentBlock(models.Model):
+#     TEXT = 'text'
+#     IMAGE = 'image'
+#     BLOCK_TYPE_CHOICES = [
+#         (TEXT, 'Text'),
+#         (IMAGE, 'Image'),
+#     ]
+
+#     TEXT_TYPE_CHOICES = [
+#         ('heading', 'Heading'),
+#         ('subheading', 'Subheading'),
+#         ('list', 'List'),
+#         ('point', 'Point'),
+#         ('normal', 'Normal Text'),
+#     ]
+
+#     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+#     case_study = models.ForeignKey('CaseStudy', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+#     service = models.ForeignKey('Service', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+#     event = models.ForeignKey('Event', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+#     techstack = models.ForeignKey('TechStack', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+
+#     block_type = models.CharField(max_length=10, choices=BLOCK_TYPE_CHOICES)
+#     text = models.TextField(blank=True)
+#     image = models.ImageField(upload_to='content_blocks/', blank=True)
+#     text_type = models.CharField(max_length=20, choices=TEXT_TYPE_CHOICES, blank=True)
+
+#     class Meta:
+#         ordering = ['id']  # or another default ordering
+
+#     def __str__(self):
+#         return f"ContentBlock for {self.blog or self.case_study or self.service}"
 
 class ContentBlock(models.Model):
     TEXT = 'text'
@@ -23,26 +46,26 @@ class ContentBlock(models.Model):
         (IMAGE, 'Image'),
     ]
 
-    TEXT_TYPE_CHOICES = [
-        ('heading', 'Heading'),
-        ('subheading', 'Subheading'),
-        ('list', 'List'),
-        ('point', 'Point'),
-        ('normal', 'Normal Text'),
+    IMAGE_SIZE_CHOICES = [
+        ('thumbnail', 'Thumbnail'),
+        ('medium', 'Medium'),
+        ('large', 'Large'),
     ]
 
     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+    techstack = models.ForeignKey('TechStack', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
     case_study = models.ForeignKey('CaseStudy', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
     service = models.ForeignKey('Service', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
     event = models.ForeignKey('Event', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
+    
 
     block_type = models.CharField(max_length=10, choices=BLOCK_TYPE_CHOICES)
-    text = models.TextField(blank=True)
+    text = RichTextField(blank=True) 
     image = models.ImageField(upload_to='content_blocks/', blank=True)
-    text_type = models.CharField(max_length=20, choices=TEXT_TYPE_CHOICES, blank=True)
+    image_size = models.CharField(max_length=10, choices=IMAGE_SIZE_CHOICES, blank=True)
 
     class Meta:
-        ordering = ['id']  # or another default ordering
+        ordering = ['id']
 
     def __str__(self):
         return f"ContentBlock for {self.blog or self.case_study or self.service}"
@@ -83,6 +106,15 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+class TechStack(models.Model):
+    title = models.CharField(max_length=200, default='Default Title')
+    mainImage = models.ImageField(upload_to='techstack_images/', null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 
 class FormData(models.Model):
     firstName = models.CharField(max_length=100, default='Default First Name')
@@ -98,16 +130,6 @@ class FormData(models.Model):
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
-
-
-
-# class TechStack(models.Model):
-#     name = models.CharField(max_length=100)
-#     desc = models.TextField()
-#     image = models.ImageField(upload_to='tech_images/', null=True, blank=True)
-
-#     def __str__(self):
-#         return self.name
 
 class WhitePaper(models.Model):
     title = models.CharField(max_length=200)

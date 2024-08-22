@@ -34,7 +34,7 @@ function ServicesSection() {
                         className="invert-0 hidden dark:block"
                         alt="Our Capabilities"
                     />
-                    <motion.div {...floatAnimation} className="absolute bottom-0 left-[-350px] bg-background w-full h-auto">
+                    <motion.div {...floatAnimation} className="absolute bottom-1/4 left-[-350px] bg-background w-full h-auto">
                         <NeonGradientCard className='bg-background'>
                             <h1 className='font-nas'>Data Engineering:</h1>
                             <p className='text-left'>Develop a robust data strategy, governance framework, and integration solutions for seamless data management.</p>
@@ -53,6 +53,8 @@ function ServicesSection() {
                         </NeonGradientCard>
                     </motion.div>
                 </div>
+
+
             </div>
             <ShimmerButton className="shadow-2xl" background='darkBlue' borderRadius='4px' href='/services'>
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">

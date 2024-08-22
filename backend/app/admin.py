@@ -5,18 +5,21 @@ from django.forms import forms
 class ContentBlockInline(admin.StackedInline):
     model = ContentBlock
     extra = 1
-    fields = ['block_type', 'text', 'image', 'text_type']
+    fields = ['block_type', 'text', 'image', 'image_size']
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
         if obj:
             if obj.block_type == ContentBlock.TEXT:
-                form.base_fields['text_type'].widget = forms.Select(choices=ContentBlock.TEXT_TYPE_CHOICES)
                 form.base_fields['image'].widget = forms.HiddenInput()
+                form.base_fields['image_size'].widget = forms.HiddenInput()
             elif obj.block_type == ContentBlock.IMAGE:
-                form.base_fields['image'].widget = forms.ClearableFileInput()
                 form.base_fields['text'].widget = forms.HiddenInput()
-                form.base_fields['text_type'].widget = forms.HiddenInput()
+            else:
+                # If neither TEXT nor IMAGE is selected, hide the other fields
+                form.base_fields['text'].widget = forms.HiddenInput()
+                form.base_fields['image'].widget = forms.HiddenInput()
+                form.base_fields['image_size'].widget = forms.HiddenInput()
         return form
 
 class BaseContentAdmin(admin.ModelAdmin):
@@ -39,15 +42,14 @@ class ServiceAdmin(BaseContentAdmin):
 class EventAdmin(BaseContentAdmin):
     pass
 
-# @admin.register(TechStack)
-# class TechStackAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'desc')
-#     search_fields = ('name',)
+@admin.register(TechStack)
+class TechStackAdmin(BaseContentAdmin):
+    pass
 
 @admin.register(WhitePaper)
 class WhitePaperAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
-    search_fields = ('title',)  # Use 'title' instead of 'name' here
+    search_fields = ('title',)  
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
@@ -55,11 +57,11 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 @admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):  # Renamed class to avoid conflict
+class TestimonialAdmin(admin.ModelAdmin):  
     list_display = ('author', 'company', 'content')
     search_fields = ('author', 'company')
 
 @admin.register(FormData)
-class FormDataAdmin(admin.ModelAdmin):  # Added FormData model
+class FormDataAdmin(admin.ModelAdmin):  
     list_display = ('firstName', 'lastName', 'email', 'submitted_at')
     search_fields = ('firstName', 'lastName', 'email')

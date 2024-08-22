@@ -116,11 +116,28 @@ const InsightsContent = () => {
         <Link to="/events" className="block text-sm hover:underline">
           Events
         </Link>
+        <Link to="/techstacks" className="block text-sm hover:underline">
+          TechStack
+        </Link>
       </div>
     </div>
   );
 };
+
 const AboutContent = () => {
+  return ( 
+    <div className="relative w-48 p-4 rounded-lg shadow-lg 
+      bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
+      <div className="mb-3 space-y-3">
+        <a href="/contact-us" className="block text-sm hover:underline">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  );
+};
+
+const TechStackContent = () => {
   return ( 
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
