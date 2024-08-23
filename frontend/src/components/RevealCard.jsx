@@ -169,8 +169,8 @@ const RevealCard = ({ title, image, height, type, id }) => {
           </DialogTrigger>
           <DialogContent className="sm:max-w-xl">
             <DialogHeader>
-              <DialogTitle>Form</DialogTitle>
-              {/* <DialogDescription>Fill the form</DialogDescription> */}
+              <DialogTitle>{`Please fill the form to view this ${type}`}</DialogTitle>
+              {/* <DialogDescription>{`Please fill the form to view this ${type}`}</DialogDescription> */}
             </DialogHeader>
             <Form
               closeDialog={handleDialogClose}
