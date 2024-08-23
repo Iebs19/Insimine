@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="flex gap-4 justify-center align-middle mt-8">
             {/* Twitter and LinkedIn icons */}
             <a
-              href="https://twitter.com/yourprofile"
+              href="https://x.com/InsiMine"
               className="text-blue-500 hover:text-blue-700"
             >
               <XIcon />
