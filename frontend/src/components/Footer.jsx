@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Twitter, LinkedIn } from "@mui/icons-material";
+import {LinkedIn } from "@mui/icons-material";
+import XIcon from '@mui/icons-material/X';
 import logoWhite from "../assets/Insimine-LOGO-White.svg";
 import logoBlue from "../assets/Insimine-LOGO-Blue.svg";
 
@@ -87,7 +88,7 @@ const Footer = () => {
               href="https://twitter.com/yourprofile"
               className="text-blue-500 hover:text-blue-700"
             >
-              <Twitter />
+              <XIcon />
             </a>
             <a
               href="https://www.linkedin.com/company/insimine/"
