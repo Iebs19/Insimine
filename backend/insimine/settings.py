@@ -76,7 +76,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'insimine.wsgi.application'
 
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'extraPlugins': 'justify',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],  # Add the justify options
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 

@@ -7,14 +7,18 @@ import DOMPurify from "dompurify";
 const IndividualPage = ({ type }) => {
   const { id } = useParams();
   const [page, setPage] = useState(null);
-  const getFullImageUrl = (relativePath) =>
-    `https://insimine.com/admin/api${relativePath}`;
+
+  const getFullImageUrl = (relativePath, size = "medium") => {
+
+    const sizePrefix = size === "thumbnail" ? "tn_" : size === "large" ? "lg_" : "md_";
+    return `http://localhost:8000/${relativePath}`;
+  };
 
   useEffect(() => {
     const fetchPageData = async () => {
       try {
         const response = await fetch(
-          `https://insimine.com/admin/api/${type}/${id}`
+          `http://localhost:8000/api/${type}/${id}`
         );
         console.log(type, id);
         if (!response.ok) {
@@ -34,46 +38,7 @@ const IndividualPage = ({ type }) => {
     return <div>Loading...</div>;
   }
 
-  const renderTextContent = (block) => {
-    const textStyles = {
-      heading: "font-nas text-3xl font-bold",
-      subheading: "font-nas text-2xl font-semibold",
-      list: "list-disc pl-4", // Unordered list styling
-      points: "list-decimal pl-4 ", // Ordered list styling
-      normal_text: "",
-    };
-    const sanitizeHTML = (html) => DOMPurify.sanitize(html);
-
-    return (
-        <div className="flex flex-col justify-center items-center">
-          <div className={`text-left ${textStyles[block.text_type]}`}>
-            {block.text_type === "point" ? (
-              <ol className={textStyles.points}>
-                {block.text
-                  .split("\n")
-                  .map((line, i) =>
-                    parse(sanitizeHTML(`<li key=${i}>${line}</li>`))
-                  )}
-              </ol>
-            ) : block.text_type === "list" ? (
-              <ul className={textStyles.list}>
-                {block.text
-                  .split("\n")
-                  .map((line, i) =>
-                    parse(sanitizeHTML(`<li key=${i}>${line}</li>`))
-                  )}
-              </ul>
-            ) : (
-              block.text.split("\n").map((line, i) => (
-                <div key={i} className={textStyles.normal_text}>
-                  {parse(sanitizeHTML(line))}
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-      );
-  };
+  const sanitizeHTML = (html) => DOMPurify.sanitize(html);
 
   return (
     <div className="flex flex-col justify-center pt-4">
@@ -89,24 +54,24 @@ const IndividualPage = ({ type }) => {
         {page.content_blocks.map((block, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col "
           >
             {block.block_type === "image" ? (
               <>
                 <div className="flex justify-center items-center">
                   <img
-                    src={getFullImageUrl(block.image)}
+                    src={getFullImageUrl(block.image, block.image_size)}
                     alt={`${block.text}`}
                   />
                 </div>
                 {block.text && (
                   <div className="text-center text-sm pt-2">
-                    {/* <sub>{block.text}</sub> */}
+                    <sub>{parse(sanitizeHTML(block.text))}</sub>
                   </div>
                 )}
               </>
             ) : (
-              renderTextContent(block)
+              <div>{parse((block.text))}</div>
             )}
           </div>
         ))}
