@@ -170,7 +170,7 @@ const RevealCard = ({ title, image, height, type, id }) => {
           <DialogContent className="sm:max-w-xl">
             <DialogHeader>
               <DialogTitle>Form</DialogTitle>
-              <DialogDescription>Fill the form</DialogDescription>
+              {/* <DialogDescription>Fill the form</DialogDescription> */}
             </DialogHeader>
             <Form
               closeDialog={handleDialogClose}
