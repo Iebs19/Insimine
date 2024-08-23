@@ -90,7 +90,7 @@ const Footer = () => {
               <Twitter />
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/company/insimine/"
               className="text-blue-700 hover:text-blue-900"
             >
               <LinkedIn />
