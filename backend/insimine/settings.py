@@ -91,13 +91,14 @@ CKEDITOR_CONFIGS = {
 
 DATABASES = {
    'default': {
-       'ENGINE': 'mysql.connector.django',
-    #    'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'insimine_admin',
-        'USER': 'insimine_admin',
-        'PASSWORD': 'insimine@123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+    #    'ENGINE': 'mysql.connector.django',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': 'insimine_admin',
+        # 'USER': 'insimine_admin',
+        # 'PASSWORD': 'insimine@123',
+        # 'HOST': 'localhost',
+        # 'PORT': '3306',
    }
 }
 

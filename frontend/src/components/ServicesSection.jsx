@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ourcapabilities from "..//assets/1st-Infographic-Transparent.png";
-import ourcapabilitiesdark from "..//assets/Dark-Mode-Infographics.png"
+import ourcapabilities from "..//assets/HomePageInfographics-LightMode.png";
+import ourcapabilitiesdark from "..//assets/HomePageInfographics-DarkMode.png"
 import ShimmerButton from './magicui/shimmer-button';
 import { NeonGradientCard } from './magicui/neon-gradient-card';
 
@@ -36,19 +36,19 @@ function ServicesSection() {
                     />
                     <motion.div {...floatAnimation} className="absolute bottom-1/4 left-[-350px] bg-background w-full h-auto">
                         <NeonGradientCard className='bg-background'>
-                            <h1 className='font-nas'>Data Engineering:</h1>
+                            <h1 className='font-nas text-xl'>Data Engineering:</h1>
                             <p className='text-left'>Develop a robust data strategy, governance framework, and integration solutions for seamless data management.</p>
                         </NeonGradientCard>
                     </motion.div>
                     <motion.div {...floatAnimation} className="absolute top-0 right-[-350px] bg-background w-full h-auto">
                         <NeonGradientCard className='bg-background'>
-                            <h1 className='font-nas'>Data Lakes & Big Data Management:</h1>
+                            <h1 className='font-nas text-xl'>Data Lakes & Big Data Management:</h1>
                             <p className='text-left'>Centralize and manage vast amounts of structured and unstructured data efficiently.</p>
                         </NeonGradientCard>
                     </motion.div>
                     <motion.div {...floatAnimation} className="absolute bottom-0 right-[-350px] bg-background w-full h-auto">
                         <NeonGradientCard className='bg-background'>
-                            <h1 className='font-nas'>AI & Gen AI Applications:</h1>
+                            <h1 className='font-nas text-xl'>AI & Gen AI Applications:</h1>
                             <p className='text-left'>Leverage advanced analytics and AI-driven solutions to transform your business operations.</p>
                         </NeonGradientCard>
                     </motion.div>

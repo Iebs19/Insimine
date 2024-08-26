@@ -108,7 +108,7 @@ const IndividualPage = ({ type }) => {
   const [page, setPage] = useState(null);
 
   const getFullImageUrl = (relativePath) => {
-    return `http://127.0.0.1:8000/${relativePath}`;
+    return `https://www.insimine.com/${relativePath}`;
     // return `https://www.insimine.com/${relativePath}`;
   };
 
@@ -129,8 +129,8 @@ const IndividualPage = ({ type }) => {
     const fetchPageData = async () => {
       try {
         const response = await fetch(
-          // `https://insimine.com/admin/api/${type}/${id}`
-          `http://127.0.0.1:8000/api/${type}/${id}`
+          `https://insimine.com/admin/api/${type}/${id}`
+          // `http://127.0.0.1:8000/api/${type}/${id}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
