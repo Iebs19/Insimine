@@ -5,6 +5,7 @@ django-cors-headers
 django-js-asset
 django-webpack-loader
 djangorestframework
+mysql-connector-python
 pillow
 psycopg2-binary
 python-dotenv

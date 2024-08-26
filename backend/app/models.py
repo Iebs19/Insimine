@@ -3,40 +3,8 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+
 from ckeditor.fields import RichTextField
-
-# class ContentBlock(models.Model):
-#     TEXT = 'text'
-#     IMAGE = 'image'
-#     BLOCK_TYPE_CHOICES = [
-#         (TEXT, 'Text'),
-#         (IMAGE, 'Image'),
-#     ]
-
-#     TEXT_TYPE_CHOICES = [
-#         ('heading', 'Heading'),
-#         ('subheading', 'Subheading'),
-#         ('list', 'List'),
-#         ('point', 'Point'),
-#         ('normal', 'Normal Text'),
-#     ]
-
-#     blog = models.ForeignKey('Blog', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
-#     case_study = models.ForeignKey('CaseStudy', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
-#     service = models.ForeignKey('Service', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
-#     event = models.ForeignKey('Event', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
-#     techstack = models.ForeignKey('TechStack', on_delete=models.CASCADE, null=True, blank=True, related_name='content_blocks')
-
-#     block_type = models.CharField(max_length=10, choices=BLOCK_TYPE_CHOICES)
-#     text = models.TextField(blank=True)
-#     image = models.ImageField(upload_to='content_blocks/', blank=True)
-#     text_type = models.CharField(max_length=20, choices=TEXT_TYPE_CHOICES, blank=True)
-
-#     class Meta:
-#         ordering = ['id']  # or another default ordering
-
-#     def __str__(self):
-#         return f"ContentBlock for {self.blog or self.case_study or self.service}"
 
 class ContentBlock(models.Model):
     TEXT = 'text'

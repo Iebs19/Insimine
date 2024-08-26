@@ -48,6 +48,9 @@ const Navbar = () => {
           <FlyoutLink href="/services" FlyoutContent={ServicesContent}>
             Services
           </FlyoutLink>
+          <FlyoutLink href="/services" FlyoutContent={TechStackContent}>
+            TechStack
+          </FlyoutLink>
           <FlyoutLink href="/insights" FlyoutContent={InsightsContent}>
             Insights
           </FlyoutLink>
@@ -116,9 +119,6 @@ const InsightsContent = () => {
         <Link to="/events" className="block text-sm hover:underline">
           Events
         </Link>
-        <Link to="/techstacks" className="block text-sm hover:underline">
-          TechStack
-        </Link>
       </div>
     </div>
   );
@@ -142,8 +142,20 @@ const TechStackContent = () => {
     <div className="relative w-48 p-4 rounded-lg shadow-lg 
       bg-green/80 dark:bg-[#29c4f8]/80 backdrop-blur-lg pb-2">
       <div className="mb-3 space-y-3">
-        <a href="/contact-us" className="block text-sm hover:underline">
-          Contact Us
+        <a href="/techstack/1" className="block text-sm hover:underline">
+          Advanced Analytics
+        </a>
+        <a href="/techstack/2" className="block text-sm hover:underline">
+          Data Warehousing
+        </a>
+        <a href="/techstack/3" className="block text-sm hover:underline">
+          GenAI
+        </a>
+        <a href="/techstack/4" className="block text-sm hover:underline">
+          MLOps
+        </a>
+        <a href="/techstack/5" className="block text-sm hover:underline">
+          Data Engineering
         </a>
       </div>
     </div>

@@ -9,22 +9,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
+# CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com' stmp server
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'your_email@example.com'
-# EMAIL_HOST_PASSWORD = 'your_password'
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@&*8@bevz!wa77@3%=7l(vihhfy5qws^#fee)7ln9pohqaks)w'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -42,7 +35,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'app',
+    # 'tinymce',
     'ckeditor',
+    # 'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# CSRF_TRUSTED_ORIGINS = ['https://insimine.com', 'http://localhost:8000']
 ROOT_URLCONF = 'insimine.urls'
 
 TEMPLATES = [
@@ -76,32 +71,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'insimine.wsgi.application'
 
+# CKEDITOR_IMAGE_BACKEND = 'pillow'
+# CKEDITOR_ALLOW_NONIMAGE_FILES = False
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'extraPlugins': 'justify',
+        'extraPlugins': 'justify',  # Add justify and image2 plugins
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],  # Add the justify options
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],  # Text alignment options
+            ['Image', 'Table'],  # Image and table options
             ['NumberedList', 'BulletedList'],
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source']
         ],
     },
 }
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME'),
-#         'USER': os.getenv('DB_USER'),
-#         'PASSWORD': os.getenv('DB_PASSWORD'),
-#         'HOST': os.getenv('DB_HOST'),
-#         'PORT': os.getenv('DB_PORT'),
-#    }
-# }
 
 DATABASES = {
    'default': {
