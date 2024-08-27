@@ -105,7 +105,7 @@ const Footer = () => {
               <h2 className={`text-lg font-semibold mb-4 ${textColor}`}>
                 {menu.title}
               </h2>
-              <ul>
+              <ul className="list-none">
                 {menu.links.map((link, linkIndex) => (
                   <motion.li
                     key={linkIndex}

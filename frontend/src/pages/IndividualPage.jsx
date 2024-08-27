@@ -115,11 +115,13 @@ const IndividualPage = ({ type }) => {
   const getImageWidth = (imageSize) => {
     switch (imageSize) {
       case "thumbnail":
-        return 300;
+        return 450; 
+        // 390 x 252 
       case "medium":
-        return 450;
+        return 600;
+
       case "large":
-        return 650;
+        return 1080;
       default:
         return 450;
     }
@@ -158,7 +160,7 @@ const IndividualPage = ({ type }) => {
           {page.title}
         </div>
         <div className="flex justify-center ml-4">
-          <img src={page.mainImage} alt={page.title} className="w-[450px] h-auto" />
+          <img src={page.mainImage} alt={page.title} className="w-auto h-auto" />
         </div>
       </div>
       <div className="flex flex-col gap-4 gap-y-12 pt-12 px-12">
