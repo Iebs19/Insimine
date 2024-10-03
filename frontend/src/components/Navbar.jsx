@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PulsatingButton from "@/components/ui/pulsating-button";
@@ -5,7 +6,8 @@ import logoWhite from '../assets/Insimine-LOGO-White.svg';
 import logoBlue from '../assets/Insimine-LOGO-Blue.svg';
 import { useTheme } from 'next-themes';
 import { Link } from "react-router-dom";
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Logo = () => {
     const { theme } = useTheme(); // or your theme hook/context
@@ -16,11 +18,12 @@ const Logo = () => {
         <Link to='/'>
             <img src={logo} alt="company logo" className="h-8 w-full"/>
         </Link>
-    )
+    );
 };
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,20 +38,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 font-nas transition-transform duration-300 ease-out rounded-sm
-      ${scrolled ? 'bg-[#ffffff]/30 dark:bg-[#29c4f8]/30 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
+      ${scrolled ? 'md:bg-[#ffffff]/30 md:dark:bg-[#29c4f8]/30 md:backdrop-blur-md md:shadow-lg' : 'bg-transparent'} 
+      ${isOpen ? 'bg-[#ffffff]/30 dark:bg-[#29c4f8]/30 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
     >
       <div className="flex items-center justify-between p-4 pb-2">
-        <Logo/>
-        <div className="flex items-center space-x-8 text-black dark:text-white">
+        <Logo />
+        <div className="hidden md:flex items-center space-x-8 text-black dark:text-white">
           <FlyoutLink href="/aboutus" FlyoutContent={AboutContent}>
             About Us
           </FlyoutLink>
           <FlyoutLink href="/services" FlyoutContent={ServicesContent}>
             Services
           </FlyoutLink>
-          <FlyoutLink href="/services" FlyoutContent={TechStackContent}>
+          <FlyoutLink href="/techstacks" FlyoutContent={TechStackContent}>
             TechStack
           </FlyoutLink>
           <FlyoutLink href="/insights" FlyoutContent={InsightsContent}>
@@ -56,7 +62,32 @@ const Navbar = () => {
           </FlyoutLink>
           <PulsatingButton className="" pulseColor='green'><a href="/bookings">Book a consultation</a></PulsatingButton>
         </div>
+        
+        {/* Burger Icon for small screens */}
+        <div className="md:hidden flex items-center">
+          <button onClick={toggleMenu} className="text-black dark:text-white focus:outline-none">
+            {isOpen ? <CloseIcon className="w-6 h-6"/> : <MenuIcon className="w-6 h-6"/>}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            exit={{ opacity: 0, y: -20 }} 
+            className="md:hidden flex flex-col items-center space-y-4 pb-4 text-black dark:text-white bg-[#ffffff]/30 dark:bg-[#29c4f8]/30 backdrop-blur-md shadow-lg"
+          >
+            <Link to="/aboutus" onClick={toggleMenu}>About Us</Link>
+            <Link to="/services" onClick={toggleMenu}>Services</Link>
+            <Link to="/techstacks" onClick={toggleMenu}>TechStack</Link>
+            <Link to="/insights" onClick={toggleMenu}>Insights</Link>
+            <Link to="/bookings" onClick={toggleMenu}>Book a consultation</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
@@ -161,6 +192,7 @@ const TechStackContent = () => {
     </div>
   );
 };
+
 const ServicesContent = () => {
   return ( 
     <div className="relative w-48 p-4 rounded-lg shadow-lg 

@@ -26,7 +26,7 @@
     "cobe": "^0.6.3",
     "dompurify": "^3.1.6",
     "framer-motion": "^11.3.21",
-    "html-react-parser": "^5.1.12",
+    "html-react-parser": "^5.1.16",
     "lucide-react": "^0.424.0",
     "magicui-cli": "^0.1.6",
     "next-themes": "^0.3.0",
@@ -37,6 +37,7 @@
     "react-router-dom": "^6.26.0",
     "react-spring": "^9.7.4",
     "react-tweet": "^3.2.1",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"

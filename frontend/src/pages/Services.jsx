@@ -1,3 +1,160 @@
+// import React from 'react';
+// import {
+//   Accordion,
+//   AccordionContent,
+//   AccordionItem,
+//   AccordionTrigger,
+// } from "@/components/ui/accordion";
+// import { Separator } from "@/components/ui/separator";
+// import DataLake from "../assets/Data_Lake.png";
+// import DataEng from "../assets/Data_Eng.png";
+// import GenAI from "../assets/GenAI.png";
+// import ShimmerButton from "@/components/magicui/shimmer-button";
+// function Services() {
+//   return (
+//     <div className='flex flex-col justify-center pt-4'>
+//       <div className='font-nas font-bold justify-start text-7xl no-scrollbar'>
+//         Services
+//       </div>
+//       <div className='flex flex-col justify-center mr-auto pt-6 no-scrollbar'>
+//         <div className='font-nas text-xl'>
+//           Unlock the full potential of your data with InsiMine's specialized data and analytics services tailored for the pharmaceutical and healthcare industries. Our innovative solutions transform raw data into actionable insights, driving growth, improving patient outcomes, and enhancing operational efficiency. Discover how our expertise in Data Engineering, Data Lakes & Big Data Management, and AI & Gen AI Applications can empower your organization to make informed, intelligent decisions.
+//         </div>
+//       </div>
+//       <div className='flex flex-col pt-12 px-24'>
+//         <div className='flex flex-row justify-between gap-6 z-10' id='service1'>
+//           <div className='w-1/2'>
+//             <div className='sticky top-24'>
+//               <div className='font-nas text-4xl text-left'>
+//                 1. Data Engineering
+//               </div>
+//               <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+//                 InsiMine offers a comprehensive data engineering framework designed specifically for the pharmaceutical and healthcare industries. Our services help you develop a robust data strategy, ensure data governance, and optimize data management processes.
+//               </h1>
+//               <div className='flex pt-6'>
+//                 <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/1'>
+//                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+//                     Learn More
+//                   </span>
+//                 </ShimmerButton>
+//               </div>
+//               {/* <img src={DataEng} alt="Data Engineering" className='mt-16 mx-16 w-3/4 self-center' /> */}
+//             </div>
+//           </div>
+//           <div className='w-1/2 overflow-y-auto'>
+//             <div className='flex flex-col text-2xl pt-12'>
+//               <p className='text-3xl font-nas text-left'>Key offerings :-</p>
+
+//               <div className='z-25'>
+//                 <Accordion type="multiple">
+//                   <AccordionItem value="item-1" >
+//                     <AccordionTrigger className='font-nas'>•	Data Strategy and Roadmap</AccordionTrigger>
+//                     <AccordionContent className='text-left'>
+//                       We offer a robust Enterprise Information Management (EIM) strategy and roadmap tailored to pharmaceutical and healthcare needs. The strategic support includes comprehensive data infrastructure evaluation to ensure scalability and compliance, development of data security and compliance strategies to protect sensitive healthcare data, and implementation of a data governance framework to ensure data integrity and accuracy.
+//                     </AccordionContent>
+//                   </AccordionItem>
+//                   <AccordionItem value="item-2">
+//                     <AccordionTrigger className='font-nas'>•	Data Enablement</AccordionTrigger>
+//                     <AccordionContent className='text-left'>
+//                       In this service segment, InsiMine supports healthcare enterprises in efficient data ingestion and onboarding processes for diverse healthcare data sources. We establish data catalogs and lineage systems to track data flow and usage, ensuring data quality and standardization to meet regulatory requirements. Our data integration and orchestration services also enable seamless data flow across systems, enhancing operational efficiency and data usability.
+//                     </AccordionContent>
+//                   </AccordionItem>
+//                 </Accordion>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         <Separator className="my-4" />
+
+//         <div className='flex flex-row justify-between gap-6 z-10' id='service2'>
+//           <div className='w-1/2'>
+//             <div className='sticky top-24'>
+//               <div className='font-nas text-4xl text-left'>
+//                 2. Data Lakes & Big Data Management
+//               </div>
+//               <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+//                 Transform your pharmaceutical and healthcare business with a centralized data repository. Our data lakes and big data management services enable you to manage vast amounts of structured and unstructured data efficiently, providing scalable and flexible data management and analytics capabilities.
+//               </h1>
+//               <div className='flex pt-6'>
+//                 <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'href='/service/2'>
+//                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+//                     Learn More
+//                   </span>
+//                 </ShimmerButton>
+//               </div>
+//             </div>
+//           </div>
+//           <div className='w-1/2 overflow-y-auto'>
+//             <div className='flex flex-col text-2xl pt-12'>
+//             <p className='text-3xl font-nas text-left'>Key offerings :-</p>
+//               <Accordion type="multiple">
+//                 <AccordionItem value="item-1">
+//                   <AccordionTrigger className='font-nas'>•	Data Storage and Sharing</AccordionTrigger>
+//                   <AccordionContent className='text-left'>
+//                     InsiMine offers secure and scalable storage solutions specifically designed to handle large healthcare datasets, ensuring improved query performance for faster data retrieval and analysis. Our services also include on-demand data exploration capabilities, supporting research and development efforts by enabling efficient access to critical data.
+//                   </AccordionContent>
+//                 </AccordionItem>
+//                 <AccordionItem value="item-2">
+//                   <AccordionTrigger className='font-nas'>•	Big Data Framework</AccordionTrigger>
+//                   <AccordionContent>
+//                     We provide cloud-based big data frameworks that offer unprecedented scalability and flexibility, essential for managing extensive and diverse healthcare data sources such as clinical trial data and patient records. Our solutions enable the rapid ingestion of these varied data types, ensuring they are efficiently processed and analyzed. Additionally, we implement comprehensive data governance processes to manage the complexities of healthcare data, maintaining integrity and compliance throughout.
+//                   </AccordionContent>
+//                 </AccordionItem>
+//               </Accordion>
+//             </div>
+//           </div>
+//         </div>
+
+//         <Separator className="my-4" />
+
+//         <div className='flex flex-row justify-between gap-6 z-10' id='service3'>
+//           <div className='w-1/2'>
+//             <div className='sticky top-24'>
+//               <div className='font-nas text-4xl text-left'>
+//                 3. AI & Gen AI Applications
+//               </div>
+//               <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+//                 Leverage the power of AI and Gen AI to transform your pharmaceutical and healthcare operations. Our AI and Gen AI applications provide advanced analytics, predictive modeling, and automated decision-making capabilities to drive growth, improve patient outcomes, and enhance operational efficiency.
+//               </h1>
+//               <div className='flex pt-6'>
+//                 <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/3'>
+//                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+//                     Learn More
+//                   </span>
+//                 </ShimmerButton>
+//               </div>
+//             </div>
+//           </div>
+//           <div className='w-1/2 overflow-y-auto'>
+//             <div className='flex flex-col text-2xl pt-12'>
+//             <p className='text-3xl font-nas text-left'>Key offerings :-</p>
+//               <Accordion type="multiple">
+//                 <AccordionItem value="item-1">
+//                   <AccordionTrigger className='font-nas'>•	AI-Powered Analytics</AccordionTrigger>
+//                   <AccordionContent className='text-left'>
+//                     InsiMine’s AI-powered analytics offer automated insights generation to support clinical and business decisions, ensuring organizations can make data-driven choices with confidence. Our predictive modeling and forecasting capabilities allow for anticipating patient needs and optimizing resource allocation. Additionally, our real-time data processing ensures timely and accurate insights, enhancing overall decision-making and operational efficiency.
+//                   </AccordionContent>
+//                 </AccordionItem>
+//                 <AccordionItem value="item-2">
+//                   <AccordionTrigger className='font-nas'>•	Gen AI Solutions</AccordionTrigger>
+//                   <AccordionContent className='text-left'>
+//                     Our GenAI Solutions encompass cutting-edge technologies to transform healthcare delivery and outcomes. Our Natural Language Processing (NLP) capabilities enhance patient interactions and provide valuable sentiment analysis, improving patient engagement and satisfaction. We leverage Computer Vision for advanced image and video analysis, aiding in diagnostics and treatment planning. Additionally, our advanced machine learning models support drug discovery, patient risk stratification, and other critical healthcare applications, driving innovation and efficiency across the industry.
+//                   </AccordionContent>
+//                 </AccordionItem>
+//               </Accordion>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Services;
+
+
+
 import React from 'react';
 import {
   Accordion,
@@ -6,99 +163,101 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import DataLake from "../assets/Data_Lake.png";
-import DataEng from "../assets/Data_Eng.png";
-import GenAI from "../assets/GenAI.png";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+
 function Services() {
   return (
-    <div className='flex flex-col justify-center pt-4'>
-      <div className='font-nas font-bold justify-start text-7xl no-scrollbar'>
+    <div className='flex flex-col justify-center pt-4 px-4 md:px-8 lg:px-12'>
+      {/* Services Title */}
+      <div className='font-nas font-bold text-4xl sm:text-5xl lg:text-7xl text-left'>
         Services
       </div>
-      <div className='flex flex-col justify-center mr-auto pt-6 no-scrollbar'>
-        <div className='font-nas text-xl'>
+
+      {/* Services Description */}
+      <div className='flex flex-col justify-center mr-auto pt-6'>
+        <div className='font-nas text-lg sm:text-xl lg:text-2xl text-justify'>
           Unlock the full potential of your data with InsiMine's specialized data and analytics services tailored for the pharmaceutical and healthcare industries. Our innovative solutions transform raw data into actionable insights, driving growth, improving patient outcomes, and enhancing operational efficiency. Discover how our expertise in Data Engineering, Data Lakes & Big Data Management, and AI & Gen AI Applications can empower your organization to make informed, intelligent decisions.
         </div>
       </div>
-      <div className='flex flex-col pt-12 px-24'>
-        <div className='flex flex-row justify-between gap-6 z-10' id='service1'>
-          <div className='w-1/2'>
-            <div className='sticky top-24'>
-              <div className='font-nas text-4xl text-left'>
+
+      {/* Service Sections */}
+      <div className='flex flex-col pt-12 space-y-12'>
+
+        {/* Data Engineering Section */}
+        <div className='flex flex-col lg:flex-row justify-between gap-6 z-10' id='service1'>
+          <div className='lg:w-1/2'>
+            <div className='lg:sticky top-24'>
+              <div className='font-nas text-2xl sm:text-3xl lg:text-4xl text-left'>
                 1. Data Engineering
               </div>
-              <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+              <h1 className='text-sm sm:text-base lg:text-lg font-nas font-bold pt-6 text-left'>
                 InsiMine offers a comprehensive data engineering framework designed specifically for the pharmaceutical and healthcare industries. Our services help you develop a robust data strategy, ensure data governance, and optimize data management processes.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/1'>
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                <ShimmerButton className="shadow-2xl w-1/2 md:w-1/3" background='darkBlue' borderRadius='4px' href='/service/1'>
+                  <span className="whitespace-pre-wrap text-center text-xs sm:text-sm lg:text-lg font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10">
                     Learn More
                   </span>
                 </ShimmerButton>
               </div>
-              {/* <img src={DataEng} alt="Data Engineering" className='mt-16 mx-16 w-3/4 self-center' /> */}
             </div>
           </div>
-          <div className='w-1/2 overflow-y-auto'>
-            <div className='flex flex-col text-2xl pt-12'>
-              <p className='text-3xl font-nas text-left'>Key offerings :-</p>
-
-              <div className='z-25'>
-                <Accordion type="multiple">
-                  <AccordionItem value="item-1" >
-                    <AccordionTrigger className='font-nas'>•	Data Strategy and Roadmap</AccordionTrigger>
-                    <AccordionContent className='text-left'>
-                      We offer a robust Enterprise Information Management (EIM) strategy and roadmap tailored to pharmaceutical and healthcare needs. The strategic support includes comprehensive data infrastructure evaluation to ensure scalability and compliance, development of data security and compliance strategies to protect sensitive healthcare data, and implementation of a data governance framework to ensure data integrity and accuracy.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger className='font-nas'>•	Data Enablement</AccordionTrigger>
-                    <AccordionContent className='text-left'>
-                      In this service segment, InsiMine supports healthcare enterprises in efficient data ingestion and onboarding processes for diverse healthcare data sources. We establish data catalogs and lineage systems to track data flow and usage, ensuring data quality and standardization to meet regulatory requirements. Our data integration and orchestration services also enable seamless data flow across systems, enhancing operational efficiency and data usability.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
+          <div className='lg:w-1/2'>
+            <div className='flex flex-col text-left text-xl sm:text-2xl pt-6 lg:pt-12'>
+              <p className='text-2xl sm:text-3xl font-nas'>Key Offerings:</p>
+              <Accordion type="multiple">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className='font-nas'>• Data Strategy and Roadmap</AccordionTrigger>
+                  <AccordionContent className='text-left'>
+                    We offer a robust Enterprise Information Management (EIM) strategy and roadmap tailored to pharmaceutical and healthcare needs. The strategic support includes comprehensive data infrastructure evaluation to ensure scalability and compliance, development of data security and compliance strategies to protect sensitive healthcare data, and implementation of a data governance framework to ensure data integrity and accuracy.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className='font-nas'>• Data Enablement</AccordionTrigger>
+                  <AccordionContent className='text-left'>
+                    InsiMine supports healthcare enterprises in efficient data ingestion and onboarding processes for diverse healthcare data sources. We establish data catalogs and lineage systems to track data flow and usage, ensuring data quality and standardization to meet regulatory requirements.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </div>
 
         <Separator className="my-4" />
 
-        <div className='flex flex-row justify-between gap-6 z-10' id='service2'>
-          <div className='w-1/2'>
-            <div className='sticky top-24'>
-              <div className='font-nas text-4xl text-left'>
+        {/* Data Lakes Section */}
+        <div className='flex flex-col lg:flex-row justify-between gap-6 z-10' id='service2'>
+          <div className='lg:w-1/2'>
+            <div className='lg:sticky top-24'>
+              <div className='font-nas text-2xl sm:text-3xl lg:text-4xl text-left'>
                 2. Data Lakes & Big Data Management
               </div>
-              <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+              <h1 className='text-sm sm:text-base lg:text-lg font-nas font-bold pt-6 text-left'>
                 Transform your pharmaceutical and healthcare business with a centralized data repository. Our data lakes and big data management services enable you to manage vast amounts of structured and unstructured data efficiently, providing scalable and flexible data management and analytics capabilities.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px'href='/service/2'>
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                <ShimmerButton className="shadow-2xl w-1/2 md:w-1/3" background='darkBlue' borderRadius='4px' href='/service/2'>
+                  <span className="whitespace-pre-wrap text-center text-xs sm:text-sm lg:text-lg font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10">
                     Learn More
                   </span>
                 </ShimmerButton>
               </div>
             </div>
           </div>
-          <div className='w-1/2 overflow-y-auto'>
-            <div className='flex flex-col text-2xl pt-12'>
-            <p className='text-3xl font-nas text-left'>Key offerings :-</p>
+          <div className='lg:w-1/2'>
+            <div className='flex flex-col text-left text-xl sm:text-2xl pt-6 lg:pt-12'>
+              <p className='text-2xl sm:text-3xl font-nas'>Key Offerings:</p>
               <Accordion type="multiple">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className='font-nas'>•	Data Storage and Sharing</AccordionTrigger>
+                  <AccordionTrigger className='font-nas'>• Data Storage and Sharing</AccordionTrigger>
                   <AccordionContent className='text-left'>
-                    InsiMine offers secure and scalable storage solutions specifically designed to handle large healthcare datasets, ensuring improved query performance for faster data retrieval and analysis. Our services also include on-demand data exploration capabilities, supporting research and development efforts by enabling efficient access to critical data.
+                    InsiMine offers secure and scalable storage solutions specifically designed to handle large healthcare datasets, ensuring improved query performance for faster data retrieval and analysis.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className='font-nas'>•	Big Data Framework</AccordionTrigger>
+                  <AccordionTrigger className='font-nas'>• Big Data Framework</AccordionTrigger>
                   <AccordionContent>
-                    We provide cloud-based big data frameworks that offer unprecedented scalability and flexibility, essential for managing extensive and diverse healthcare data sources such as clinical trial data and patient records. Our solutions enable the rapid ingestion of these varied data types, ensuring they are efficiently processed and analyzed. Additionally, we implement comprehensive data governance processes to manage the complexities of healthcare data, maintaining integrity and compliance throughout.
+                    We provide cloud-based big data frameworks that offer unprecedented scalability and flexibility, essential for managing extensive and diverse healthcare data sources such as clinical trial data and patient records.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -108,44 +267,46 @@ function Services() {
 
         <Separator className="my-4" />
 
-        <div className='flex flex-row justify-between gap-6 z-10' id='service3'>
-          <div className='w-1/2'>
-            <div className='sticky top-24'>
-              <div className='font-nas text-4xl text-left'>
+        {/* AI & Gen AI Applications Section */}
+        <div className='flex flex-col lg:flex-row justify-between gap-6 z-10' id='service3'>
+          <div className='lg:w-1/2'>
+            <div className='lg:sticky top-24'>
+              <div className='font-nas text-2xl sm:text-3xl lg:text-4xl text-left'>
                 3. AI & Gen AI Applications
               </div>
-              <h1 className='text-sm font-nas font-bold pt-6 text-left'>
+              <h1 className='text-sm sm:text-base lg:text-lg font-nas font-bold pt-6 text-left'>
                 Leverage the power of AI and Gen AI to transform your pharmaceutical and healthcare operations. Our AI and Gen AI applications provide advanced analytics, predictive modeling, and automated decision-making capabilities to drive growth, improve patient outcomes, and enhance operational efficiency.
               </h1>
               <div className='flex pt-6'>
-                <ShimmerButton className="shadow-2xl w-1/3" background='darkBlue' borderRadius='4px' href='/service/3'>
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                <ShimmerButton className="shadow-2xl w-1/2 md:w-1/3" background='darkBlue' borderRadius='4px' href='/service/3'>
+                  <span className="whitespace-pre-wrap text-center text-xs sm:text-sm lg:text-lg font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10">
                     Learn More
                   </span>
                 </ShimmerButton>
               </div>
             </div>
           </div>
-          <div className='w-1/2 overflow-y-auto'>
-            <div className='flex flex-col text-2xl pt-12'>
-            <p className='text-3xl font-nas text-left'>Key offerings :-</p>
+          <div className='lg:w-1/2'>
+            <div className='flex flex-col text-left text-xl sm:text-2xl pt-6 lg:pt-12'>
+              <p className='text-2xl sm:text-3xl font-nas'>Key Offerings:</p>
               <Accordion type="multiple">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className='font-nas'>•	AI-Powered Analytics</AccordionTrigger>
+                  <AccordionTrigger className='font-nas'>• AI-Powered Analytics</AccordionTrigger>
                   <AccordionContent className='text-left'>
-                    InsiMine’s AI-powered analytics offer automated insights generation to support clinical and business decisions, ensuring organizations can make data-driven choices with confidence. Our predictive modeling and forecasting capabilities allow for anticipating patient needs and optimizing resource allocation. Additionally, our real-time data processing ensures timely and accurate insights, enhancing overall decision-making and operational efficiency.
+                    InsiMine’s AI-powered analytics offer automated insights generation to support clinical and business decisions, ensuring organizations can make data-driven choices with confidence.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className='font-nas'>•	Gen AI Solutions</AccordionTrigger>
+                  <AccordionTrigger className='font-nas'>• Gen AI Solutions</AccordionTrigger>
                   <AccordionContent className='text-left'>
-                    Our GenAI Solutions encompass cutting-edge technologies to transform healthcare delivery and outcomes. Our Natural Language Processing (NLP) capabilities enhance patient interactions and provide valuable sentiment analysis, improving patient engagement and satisfaction. We leverage Computer Vision for advanced image and video analysis, aiding in diagnostics and treatment planning. Additionally, our advanced machine learning models support drug discovery, patient risk stratification, and other critical healthcare applications, driving innovation and efficiency across the industry.
+                    Our GenAI Solutions encompass cutting-edge technologies to transform healthcare delivery and outcomes.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

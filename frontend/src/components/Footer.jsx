@@ -11,8 +11,7 @@ const footerData = {
     {
       title: "Company",
       links: [
-        { title: "About Us", link: "/about-us" },
-        // { title: 'Careers', link: '/careers' },
+        { title: "About Us", link: "/aboutus" },
         { title: "Services", link: "/services" },
         { title: "Insights", link: "/insights" },
         { title: "Plan a Call", link: "/bookings" },
@@ -79,7 +78,7 @@ const Footer = () => {
   return (
     // <motion.div {...floatAnimation}>
     <div className="w-full pb-6 border-y-2">
-      <div className="flex flex-wrap justify-between items-center mt-4">
+      <div className="flex flex-wrap justify-between items-center mt-4 ">
         <div className="w-full lg:w-1/4 mb-8 lg:mb-0">
           <Logo />
           <div className="flex gap-4 justify-center align-middle mt-8">
@@ -99,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex gap-44 pr-24">
+        <div className="flex gap-44 pr-24 ml-8">
           {footerData.menus.map((menu, index) => (
             <div key={index} className="w-full lg:w-1/4 mb-8 lg:mb-0">
               <h2 className={`text-lg font-semibold mb-4 ${textColor}`}>

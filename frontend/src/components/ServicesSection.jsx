@@ -1,7 +1,78 @@
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import ourcapabilities from "..//assets/HomePageInfographics-LightMode.png";
+// import ourcapabilitiesdark from "..//assets/HomePageInfographics-DarkMode.png"
+// import ShimmerButton from './magicui/shimmer-button';
+// import { NeonGradientCard } from './magicui/neon-gradient-card';
+
+// function ServicesSection() {
+//     const floatAnimation = {
+//         initial: { y: 0 },
+//         animate: {
+//             y: [0, -10, 0],
+//             transition: {
+//                 duration: 3,
+//                 ease: "easeInOut",
+//                 repeat: Infinity,
+//                 repeatType: "mirror",
+//             },
+//         },
+//     };
+
+//     return (
+//         <div className='flex flex-col items-center'>
+//             <h1 className="font-nas text-4xl p-4">Our Capabilities</h1>
+//             <div className='flex justify-center pb-4'>
+//                 <div className='relative group w-1/3'>
+//                     <img
+//                         src={ourcapabilities}
+//                         className="invert-0 block dark:hidden"
+//                         alt="Our Capabilities"
+//                     />
+//                     <img
+//                         src={ourcapabilitiesdark}
+//                         className="invert-0 hidden dark:block"
+//                         alt="Our Capabilities"
+//                     />
+//                     <motion.div {...floatAnimation} className="absolute bottom-1/4 left-[-350px] bg-background w-full h-auto">
+//                         <NeonGradientCard className='bg-background'>
+//                             <h1 className='font-nas text-xl'>Data Engineering:</h1>
+//                             <p className='text-left'>Develop a robust data strategy, governance framework, and integration solutions for seamless data management.</p>
+//                         </NeonGradientCard>
+//                     </motion.div>
+//                     <motion.div {...floatAnimation} className="absolute top-0 right-[-350px] bg-background w-full h-auto">
+//                         <NeonGradientCard className='bg-background'>
+//                             <h1 className='font-nas text-xl'>Data Lakes & Big Data Management:</h1>
+//                             <p className='text-left'>Centralize and manage vast amounts of structured and unstructured data efficiently.</p>
+//                         </NeonGradientCard>
+//                     </motion.div>
+//                     <motion.div {...floatAnimation} className="absolute bottom-0 right-[-350px] bg-background w-full h-auto">
+//                         <NeonGradientCard className='bg-background'>
+//                             <h1 className='font-nas text-xl'>AI & Gen AI Applications:</h1>
+//                             <p className='text-left'>Leverage advanced analytics and AI-driven solutions to transform your business operations.</p>
+//                         </NeonGradientCard>
+//                     </motion.div>
+//                 </div>
+
+
+//             </div>
+//             <ShimmerButton className="shadow-2xl" background='darkBlue' borderRadius='4px' href='/services'>
+//                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+//                     Learn More
+//                 </span>
+//             </ShimmerButton>
+//         </div>
+//     );
+// }
+
+// export default ServicesSection;
+
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ourcapabilities from "..//assets/HomePageInfographics-LightMode.png";
-import ourcapabilitiesdark from "..//assets/HomePageInfographics-DarkMode.png"
+import ourcapabilitiesdark from "..//assets/HomePageInfographics-DarkMode.png";
 import ShimmerButton from './magicui/shimmer-button';
 import { NeonGradientCard } from './magicui/neon-gradient-card';
 
@@ -20,43 +91,79 @@ function ServicesSection() {
     };
 
     return (
-        <div className='flex flex-col items-center'>
-            <h1 className="font-nas text-4xl p-4">Our Capabilities</h1>
+        <div className='flex flex-col items-center px-4 md:px-8'>
+            {/* Heading */}
+            <h1 className="font-nas text-2xl sm:text-3xl lg:text-4xl p-2 sm:p-4">Our Capabilities</h1>
+            
+            {/* Image and floating cards */}
             <div className='flex justify-center pb-4'>
-                <div className='relative group w-1/3'>
+                <div className='relative group w-full md:w-2/3 lg:w-1/3'>
+                    {/* Light Mode Image */}
                     <img
                         src={ourcapabilities}
-                        className="invert-0 block dark:hidden"
+                        className="invert-0 block dark:hidden w-full"
                         alt="Our Capabilities"
                     />
+                    {/* Dark Mode Image */}
                     <img
                         src={ourcapabilitiesdark}
-                        className="invert-0 hidden dark:block"
+                        className="invert-0 hidden dark:block w-full"
                         alt="Our Capabilities"
                     />
-                    <motion.div {...floatAnimation} className="absolute bottom-1/4 left-[-350px] bg-background w-full h-auto">
+
+                    {/* Floating cards for larger screens */}
+                    <motion.div 
+                        {...floatAnimation} 
+                        className="absolute hidden lg:block bottom-1/4 left-[-350px] bg-background w-full h-auto"
+                    >
                         <NeonGradientCard className='bg-background'>
                             <h1 className='font-nas text-xl'>Data Engineering:</h1>
                             <p className='text-left'>Develop a robust data strategy, governance framework, and integration solutions for seamless data management.</p>
                         </NeonGradientCard>
                     </motion.div>
-                    <motion.div {...floatAnimation} className="absolute top-0 right-[-350px] bg-background w-full h-auto">
+
+                    <motion.div 
+                        {...floatAnimation} 
+                        className="absolute hidden lg:block top-0 right-[-350px] bg-background w-full h-auto"
+                    >
                         <NeonGradientCard className='bg-background'>
                             <h1 className='font-nas text-xl'>Data Lakes & Big Data Management:</h1>
                             <p className='text-left'>Centralize and manage vast amounts of structured and unstructured data efficiently.</p>
                         </NeonGradientCard>
                     </motion.div>
-                    <motion.div {...floatAnimation} className="absolute bottom-0 right-[-350px] bg-background w-full h-auto">
+
+                    <motion.div 
+                        {...floatAnimation} 
+                        className="absolute hidden lg:block bottom-0 right-[-350px] bg-background w-full h-auto"
+                    >
                         <NeonGradientCard className='bg-background'>
                             <h1 className='font-nas text-xl'>AI & Gen AI Applications:</h1>
                             <p className='text-left'>Leverage advanced analytics and AI-driven solutions to transform your business operations.</p>
                         </NeonGradientCard>
                     </motion.div>
                 </div>
-
-
             </div>
-            <ShimmerButton className="shadow-2xl" background='darkBlue' borderRadius='4px' href='/services'>
+
+            {/* Floating cards for small screens */}
+            <div className="flex flex-col lg:hidden space-y-4 w-full">
+                <NeonGradientCard className='bg-background'>
+                    <h1 className='font-nas text-lg sm:text-xl'>Data Engineering:</h1>
+                    <p className='text-left'>Develop a robust data strategy, governance framework, and integration solutions for seamless data management.</p>
+                </NeonGradientCard>
+
+                <NeonGradientCard className='bg-background'>
+                    <h1 className='font-nas text-lg sm:text-xl'>Data Lakes & Big Data Management:</h1>
+                    <p className='text-left'>Centralize and manage vast amounts of structured and unstructured data efficiently.</p>
+                </NeonGradientCard>
+
+                <NeonGradientCard className='bg-background'>
+                    <h1 className='font-nas text-lg sm:text-xl'>AI & Gen AI Applications:</h1>
+                    <p className='text-left'>Leverage advanced analytics and AI-driven solutions to transform your business operations.</p>
+                </NeonGradientCard>
+            </div>
+
+            {/* Button */}
+            <ShimmerButton className="shadow-2xl mt-6" background='darkBlue' borderRadius='4px' href='/services'>
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Learn More
                 </span>

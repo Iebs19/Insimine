@@ -1,3 +1,69 @@
+// import React, { useState, useEffect } from "react";
+// import RevealCard from "@/components/RevealCard";
+// import ShimmerButton from "@/components/magicui/shimmer-button";
+
+// const IndividualInsightSection = ({ title, fetchUrl, type }) => {
+//   const [data, setData] = useState([]);
+//   const [visibleItems, setVisibleItems] = useState(6);
+//   const [hasMore, setHasMore] = useState(true);
+
+//   useEffect(() => {
+//     // Fetch the initial data
+//     fetch(fetchUrl)
+//       .then(response => response.json())
+//       .then(data => {
+//         setData(data.slice(0, visibleItems));
+//         setHasMore(data.length > visibleItems);
+//       });
+//   }, [fetchUrl, visibleItems]);
+
+//   const handleLoadMore = () => {
+//     fetch(fetchUrl)
+//       .then(response => response.json())
+//       .then(data => {
+//         const newVisibleItems = visibleItems + 6;
+//         setData(data.slice(0, newVisibleItems));
+//         setVisibleItems(newVisibleItems);
+//         setHasMore(data.length > newVisibleItems);
+//       });
+//   };
+
+//   return (
+//     <div>
+//       <div className="font-nas font-bold text-7xl mt-16">{title}</div>
+//       <span className="block mt-4 h-[2px] origin-left rounded-full bg-lightBlue/60" />
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mt-8 gap-y-12">
+//         {data.map((item) => (
+//           <RevealCard
+//             key={item.id} 
+//             title={item.title}
+//             image={item.mainImage}
+//             // href={`https://insimine.com/admin/api/${type}/${item.id}`}
+//             height="300px"
+//             type={type}
+//             id={item.id}
+//           />
+//         ))}
+//       </div>
+//       {hasMore && (
+//         <ShimmerButton
+//           className="shadow-2xl mx-auto"
+//           background="darkBlue"
+//           borderRadius="4px"
+//           onClick={handleLoadMore}
+//         >
+//           <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+//             Load more
+//           </span>
+//         </ShimmerButton>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default IndividualInsightSection;
+
+
 import React, { useState, useEffect } from "react";
 import RevealCard from "@/components/RevealCard";
 import ShimmerButton from "@/components/magicui/shimmer-button";
@@ -29,13 +95,20 @@ const IndividualInsightSection = ({ title, fetchUrl, type }) => {
   };
 
   return (
-    <div>
-      <div className="font-nas font-bold text-7xl mt-16">{title}</div>
-      <span className="block mt-4 h-[2px] origin-left rounded-full bg-lightBlue/60" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mt-8 gap-y-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Title */}
+      <div className="font-nas font-bold text-3xl sm:text-5xl lg:text-7xl mt-8 sm:mt-12 lg:mt-16 text-center lg:text-left">
+        {title}
+      </div>
+      
+      {/* Divider */}
+      <span className="block mt-4 h-[2px] origin-left rounded-full bg-lightBlue/60 w-full lg:w-3/4 mx-auto lg:mx-0" />
+      
+      {/* Grid for cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6 lg:p-8 mt-8 gap-y-12">
         {data.map((item) => (
           <RevealCard
-            key={item.id} 
+            key={item.id}
             title={item.title}
             image={item.mainImage}
             // href={`https://insimine.com/admin/api/${type}/${item.id}`}
@@ -45,17 +118,21 @@ const IndividualInsightSection = ({ title, fetchUrl, type }) => {
           />
         ))}
       </div>
+
+      {/* Load more button */}
       {hasMore && (
-        <ShimmerButton
-          className="shadow-2xl mx-auto"
-          background="darkBlue"
-          borderRadius="4px"
-          onClick={handleLoadMore}
-        >
-          <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-            Load more
-          </span>
-        </ShimmerButton>
+        <div className="flex justify-center mt-8">
+          <ShimmerButton
+            className="shadow-2xl mx-auto w-full sm:w-1/2 lg:w-1/3"
+            background="darkBlue"
+            borderRadius="4px"
+            onClick={handleLoadMore}
+          >
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Load more
+            </span>
+          </ShimmerButton>
+        </div>
       )}
     </div>
   );
